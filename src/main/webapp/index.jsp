@@ -49,7 +49,7 @@
 				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트</a></li>
+				<li><a href="${root}/project/project.do">프로젝트</a></li>
 				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
