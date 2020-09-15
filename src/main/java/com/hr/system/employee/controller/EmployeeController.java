@@ -26,7 +26,15 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(value = "/manage/resource.do", method = RequestMethod.GET)
-	public ModelAndView customerBoardList(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView manageResource(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request", request);
+		
+		return mav;		
+	}
+
+	@RequestMapping(value = "/manage/salary.do", method = RequestMethod.GET)
+	public ModelAndView manageSalary(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("request", request);
 		

@@ -36,17 +36,18 @@
 				<h5>OOO 님 환영합니다!</h5>
 				<p>인사팀</p>
 			</div>
-
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/manage/resource.do">인사관리</a></li>
-				<li><a href="#">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
 				<li><a href="#">복리후생</a></li>
+			</ul>
+			<ul class="list-unstyled">
+				<li><a href="${root}/manage/resource.do">인사관리</a></li>
+				<li><a href="${root}/manage/salary.do">급여관리</a></li>
+				<li><a href="#">평가관리</a></li>
 				<li><a href="#">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트관리</a></li>
+				<li><a href="#">프로젝트</a></li>
 				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
@@ -86,13 +87,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-					$(document).ready(function() {
-						$('#sidebarCollapse').on('click', function() {
-							$('#sidebar').toggleClass('active');
-							$(this).toggleClass('on');
-						});
+		$(document).ready(function() {
+			$('#sidebarCollapse').on('click', function() {
+				$('#sidebar').toggleClass('active');
+				$(this).toggleClass('on');
+			});
 
-					});
-				</script>
+		});
+	</script>
 </body>
 </html>
