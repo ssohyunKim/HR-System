@@ -339,8 +339,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							지급여부
-								<input type="checkbox" name="" value="o" checked>
-								<input type="checkbox" name="" value="x" >
+								<input type="checkbox" name="" value="o">
 							</div>
 						</div>
 					</div>
