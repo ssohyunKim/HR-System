@@ -44,7 +44,6 @@
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
 				<li><a href="#">평가관리</a></li>
-				<li><a href="#">조직관리</a></li>
 				<li><a href="#">복리후생</a></li>
 				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
