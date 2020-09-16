@@ -51,6 +51,13 @@
           display:none;
       }
       
+      
+      #right-table{
+      	float:left;
+      	width:80%;
+      	margin-left:5%;
+      }
+      
     </style>
 
 </head>
@@ -102,8 +109,6 @@
 
 			<!-- Page Content  -->
 			<div id="content">
-				
-	 <div class="line"></div>
 				 <div class="container" id="treeContainer">
 					 <ul class="tree">
 				        <li>
@@ -138,6 +143,75 @@
 				        </li>
 				   </ul>
 			   </div>	
+			   
+			   			
+			<table class="table" id="right-table">
+						<thead class="thead-light">
+							<tr>
+								<th scope="col">날짜</th>
+								<th scope="col">이름</th>
+								<th scope="col">발령구분</th>
+								<th scope="col">발령내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<!-- <th scope="row"></th> -->
+								<td>2020-01-01</td>
+								<td>김민희</td>
+								<td>직급 변경</td>
+								<td>임명/사원</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>최지훈</td>
+								<td>직급 변경</td>
+								<td>임명/부장</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>홍지연</td>
+								<td>직책 변경</td>
+								<td>임명/사원</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>진은지</td>
+								<td>직책 변경</td>
+								<td>해제</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>김지원</td>
+								<td>고용형태 변경</td>
+								<td>해제</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>은지수</td>
+								<td>부서 이동</td>
+								<td>해제</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>김영태</td>
+								<td>직급 변경</td>
+								<td>임명/사원</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>김영수</td>
+								<td>직급 변경</td>
+								<td>해제</td>
+							</tr>
+							<tr>
+								<td>2020-01-01</td>
+								<td>이지원</td>
+								<td>직급 변경</td>
+								<td>임명/사원</td>
+							</tr>
+						</tbody>
+					</table>
 			</div>
 		</div>
 	</div>
