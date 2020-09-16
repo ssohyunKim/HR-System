@@ -195,7 +195,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr data-toggle="modal" data-target="#click">
 								<!-- <th scope="row"></th> -->
 								<td>김경용</td>
 								<td>13-4515</td>
@@ -284,7 +284,89 @@
 		</div>
 	</div>
 	
+	
+		<!-- 등록 Model -->
+	<div class="modal fade" id="click" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
 
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">등록하기</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+									<div class="form-group">
+										<div class="input-group date" id="Date"
+											data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input"
+												data-target="#Date" value="09/15/2020">
+											<div class="input-group-append" data-target="#Date"
+												data-toggle="datetimepicker">
+												<div class="input-group-text">
+													<i class="fa fa-calendar"></i>
+												</div>
+											</div>
+										</div>
+									</div> 
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 발령구분 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							발령구분
+			                    <select name="category" class="form-control">
+								    <option value="직급 변경">직급 변경</option>
+								    <option value="부서 이동">부서 이동</option>
+								    <option value="고용형태 변경">고용형태 변경</option>
+								    <option value="기타">기타</option>
+								</select>
+							</div>
+						</div>
+						<!-- 발령내용 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							발령내용
+								<input type="text" class="form-control" name="content" placeholder="발령내용을 입력하세요.">
+							</div>
+						</div>
+						<!-- 비고 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							비고
+								<textarea class="form-control" rows="3" name="cusContent" placeholder="글을 입력하세요."></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary">확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
     <!-- Popper.JS -->
@@ -300,6 +382,10 @@
 			});
 			
 			$('#fromDate').datetimepicker({
+				format: 'L'	
+			});
+			
+			$('#Date').datetimepicker({
 				format: 'L'	
 			});
 
