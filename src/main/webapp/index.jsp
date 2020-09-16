@@ -38,12 +38,12 @@
 			</div>
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="#">복리후생</a></li>
+				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
 			</ul>
 			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
+				<li><a href="${root}/assess/assessMain.do">평가관리</a></li>
 				<li><a href="#">복리후생</a></li>
 				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>

@@ -137,7 +137,7 @@
 										<div class="input-group date" id="fromDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
+												data-target="#fromDate" value="09/15/2020">
 											<div class="input-group-append" data-target="#fromDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -146,7 +146,7 @@
 											</div>
 										</div>
 									</div> 
-									<div style = "padding-left:20px; padding-right:20px"> ~
+									<div style = "padding-left:10px; padding-right:10px"> ~
 									</div> 
 									<div class="form-group">
 										<div class="input-group date" id="toDate"
@@ -163,14 +163,18 @@
 									</div>
 								</div>
 								&nbsp;
-								<div class="form-group" style="padding-left:50px; padding-right:50px;">
+								<div class="form-group" style="padding-left:20px;">
 									<input class="form-control mr-sm-2" type="search" placeholder="사원명" aria-label="Search">
+								</div>
+								
+								<div class="form-group" style="padding-left:20px; padding-right:20px;">
+									<input class="form-control mr-sm-2" type="search" placeholder="사원코드" aria-label="Search">
 									<button class="btn btn-outline-secondary my-2 my-sm-0"
 										type="submit">검색</button>
 								</div>
 								
-								<div class="form-group" style="float:right; padding-left:150px;">
-									<button class="btn btn-primary my-2 my-sm-2" type="button" data-toggle="modal" data-target="#WriteModal">등록</button>&nbsp;
+								<div class="form-group" style="float:right; padding-left:100px;">
+									
 									<button class="btn btn-dark my-2 my-sm-0" type="submit">다운로드</button>
 								</div>
 							</form>
@@ -181,87 +185,97 @@
 					<table class="table">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">날짜</th>
-								<th scope="col">부서</th>
 								<th scope="col">이름</th>
-								<th scope="col">직급</th>
-								<th scope="col">직원코드</th>
-								<th scope="col">평가</th>
+								<th scope="col">사번</th>
+								<th scope="col">날짜</th>
+								<th scope="col">출근시간</th>
+								<th scope="col">퇴근시간</th>
+								<th scope="col">지각여부</th>
+								<th scope="col">비고</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<!-- <th scope="row"></th> -->
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>경영팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>회계팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 							<tr>
+								<td>김경용</td>
+								<td>13-4515</td>
 								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>09:12</td>
+								<td>18:20</td>
+								<td>지각</td>
+								<td>개인사정</td>
 							</tr>
 						</tbody>
 					</table>
@@ -270,113 +284,7 @@
 		</div>
 	</div>
 	
-		<!-- 등록 Model -->
-	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg mt-5" role="document">
-			<div class="modal-content">
 
-				<!-- modal-header -->
-				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">평가 등록하기</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-
-				<form action="" name="createForm" method="post" enctype="multipart/form-data">
-					<!-- modal-body -->
-					<div class="modal-body">
-						<!-- 날짜 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							날짜
-										<div class="input-group date" id="fromDate"
-											data-target-input="nearest">
-											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
-											<div class="input-group-append" data-target="#fromDate"
-												data-toggle="datetimepicker">
-												<div class="input-group-text">
-													<i class="fa fa-calendar"></i>
-												</div>
-											</div>
-										</div>
-							</div>
-						</div>
-						<!-- 이름 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
-							</div>
-						</div>
-						<!-- 부서  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							부서
-			                    <select name="category1" class="form-control">
-								    <option value="경영팀">경영팀</option>
-								    <option value="회계팀">회계팀</option>
-								    <option value="개발팀">개발팀</option>
-								</select>
-							</div>
-						</div>
-						
-						<!-- 직급  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직급
-			                    <select name="category2" class="form-control">
-								    <option value="1">사원</option>
-								    <option value="2">주임</option>
-								    <option value="3">대리</option>
-								   	<option value="4">과장</option>
-								    <option value="5">차장</option>
-								    <option value="6">부장</option>
-								</select>
-							</div>
-						</div>
-						
-						<!--직원코드 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직원코드
-								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
-							</div>
-						</div>
-						
-						<!-- 평가  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직급
-			                    <select name="category2" class="form-control">
-								    <option value="1">A+</option>
-								    <option value="2">A0</option>
-								    <option value="3">B+</option>
-								   	<option value="4">B0</option>
-								    <option value="5">C+</option>
-								    <option value="6">C0</option>
-								    <option value="7">D+</option>
-								    <option value="8">D0</option>
-								</select>
-							</div>
-						</div>
-						
-					</div>
-					<!-- modal-footer -->
-					<div class="modal-footer justify-content-between">
-						<button type="reset" class="btn btn-warning">초기화</button>
-						<div>
-							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
 
 
     <!-- Popper.JS -->

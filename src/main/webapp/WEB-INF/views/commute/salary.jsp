@@ -30,30 +30,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 
 </head>
-<script>
-
-
-	function funcCancel(){
-		self.close();
-	}
-	
-	function button_event(root) {
-
-		 if (confirm("작성된 평가서를 등록하시겠습니까?") == true){    //확인
-			
-		     document.form.submit();
-		     var url = root+"/assess/assessMain";
-	         location.href=url;
-	         
-		 }else{   //취소
-
-				self.close();
-
-		 }
-	}
-
-</script>
-
 <body>
 <div class="wrapper">
 		<!-- Sidebar  -->
@@ -70,12 +46,12 @@
 
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
+				<li><a href="#">복리후생</a></li>
 			</ul>
 			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
-				<li><a href="${root}/assess/assessMain.do">평가관리</a></li>
+				<li><a href="#">평가관리</a></li>
 				<li><a href="#">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
@@ -107,21 +83,21 @@
 					<nav class="navbar navbar-light bg-light">
 						<div>
 							<form class="form-inline">
-								<div class="form-group" style="padding-right:50px;">
+								<div class="form-group">
 									<div class="input-group">
-										<label class="input-group-text" for="inputGroupSelect01">부서선택</label>
+										<label class="input-group-text" for="inputGroupSelect01">재직구분</label>
 									</div>
-									<select class="custom-select" id="inputGroupSelect01" >
+									<select class="custom-select" id="inputGroupSelect01">
 										<option selected>전체</option>
-										<option value="1">경영팀</option>
-										<option value="2">회계팀</option>
-										<option value="3">개발팀</option>
+										<option value="1">재직자</option>
+										<option value="2">계약직</option>
+										<option value="3">아르바이트</option>
 									</select>
 									&nbsp;
 									<div class="input-group">
 										<label class="input-group-text" for="inputGroupSelect01">직급</label>
 									</div>
-									<select class="custom-select" id="inputGroupSelect01" >
+									<select class="custom-select" id="inputGroupSelect01">
 										<option selected>전체</option>
 										<option value="1">사원</option>
 										<option value="2">주임</option>
@@ -137,7 +113,7 @@
 										<div class="input-group date" id="fromDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
+												data-target="#fromDate" value="09/15/2020">
 											<div class="input-group-append" data-target="#fromDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -145,9 +121,7 @@
 												</div>
 											</div>
 										</div>
-									</div> 
-									<div style = "padding-left:20px; padding-right:20px"> ~
-									</div> 
+									</div> ~ 
 									<div class="form-group">
 										<div class="input-group date" id="toDate"
 											data-target-input="nearest">
@@ -163,7 +137,7 @@
 									</div>
 								</div>
 								&nbsp;
-								<div class="form-group" style="padding-left:50px; padding-right:50px;">
+								<div class="form-group">
 									<input class="form-control mr-sm-2" type="search" placeholder="사원명" aria-label="Search">
 									<button class="btn btn-outline-secondary my-2 my-sm-0"
 										type="submit">검색</button>
@@ -182,86 +156,100 @@
 						<thead class="thead-light">
 							<tr>
 								<th scope="col">날짜</th>
-								<th scope="col">부서</th>
 								<th scope="col">이름</th>
 								<th scope="col">직급</th>
-								<th scope="col">직원코드</th>
-								<th scope="col">평가</th>
+								<th scope="col">근무 시간</th>
+								<th scope="col">기본급</th>
+								<th scope="col">수당</th>
+								<th scope="col">합계(단위:만원)</th>
+								<th scope="col">계좌번호</th>
+								<th scope="col">지급여부</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>경영팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>회계팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>개발팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>개발팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>개발팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>개발팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 							<tr>
+								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
-								<td>개발팀</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>개발팀</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>12-7000</td>
-								<td>A0</td>
+								<td>300</td>
+								<td>200</td>
+								<td>79</td>
+								<td>279</td>
+								<td>449901-01-123456</td>
+								<td>O</td>
 							</tr>
 						</tbody>
 					</table>
@@ -270,14 +258,15 @@
 		</div>
 	</div>
 	
-		<!-- 등록 Model -->
+
+	<!-- 등록 Model -->
 	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
 				<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">평가 등록하기</h5>
+					<h5 class="m-0 text-primary p-2">등록하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -291,17 +280,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							날짜
-										<div class="input-group date" id="fromDate"
-											data-target-input="nearest">
-											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
-											<div class="input-group-append" data-target="#fromDate"
-												data-toggle="datetimepicker">
-												<div class="input-group-text">
-													<i class="fa fa-calendar"></i>
-												</div>
-											</div>
-										</div>
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
 							</div>
 						</div>
 						<!-- 이름 -->
@@ -311,72 +290,72 @@
 								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
 							</div>
 						</div>
-						<!-- 부서  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							부서
-			                    <select name="category1" class="form-control">
-								    <option value="경영팀">경영팀</option>
-								    <option value="회계팀">회계팀</option>
-								    <option value="개발팀">개발팀</option>
-								</select>
-							</div>
-						</div>
-						
-						<!-- 직급  -->
+						<!-- 직급 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
 							직급
-			                    <select name="category2" class="form-control">
-								    <option value="1">사원</option>
-								    <option value="2">주임</option>
-								    <option value="3">대리</option>
-								   	<option value="4">과장</option>
-								    <option value="5">차장</option>
-								    <option value="6">부장</option>
+			                    <input type="text" class="form-control" name="level" placeholder="직급을 입력하세요.">
+							</div>
+						</div>
+						<!-- 근무시간 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							근무시간
+								<input type="text" class="form-control" name="worktime" placeholder="근무시간을 입력하세요.">
+							</div>
+						</div>
+						<!-- 기본급 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							기본급
+								<input type="text" class="form-control" name="pay" readonly>
+							</div>
+						</div>
+						<!-- 수당 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							수당
+								<input type="text" class="form-control" name="bonus" readonly>
+							</div>
+						</div>
+						<!-- 계좌번호 -->
+						<div class="form-group row">
+							<div class="col-sm-9">
+							계좌번호
+								<input type="text" class="form-control" name="account" placeholder="계좌번호을 입력하세요.">
+							</div>
+							<div class="col-sm-3">
+							은행
+		                    	<select name="bank" class="form-control">
+							    	<option value="국민">국민</option>
+							    	<option value="신한">신한</option>
+							    	<option value="우리">우리</option>
+							    	<option value="농협">농협</option>
+							    	<option value="카카오뱅크">카카오뱅크</option>
 								</select>
 							</div>
 						</div>
-						
-						<!--직원코드 -->
+						<!-- 지급여부 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							직원코드
-								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
+							지급여부
+								<input type="checkbox" name="" value="o" checked>
+								<input type="checkbox" name="" value="x" >
 							</div>
 						</div>
-						
-						<!-- 평가  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직급
-			                    <select name="category2" class="form-control">
-								    <option value="1">A+</option>
-								    <option value="2">A0</option>
-								    <option value="3">B+</option>
-								   	<option value="4">B0</option>
-								    <option value="5">C+</option>
-								    <option value="6">C0</option>
-								    <option value="7">D+</option>
-								    <option value="8">D0</option>
-								</select>
-							</div>
-						</div>
-						
 					</div>
 					<!-- modal-footer -->
 					<div class="modal-footer justify-content-between">
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+							<button type="submit" class="btn btn-primary">확인</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
 
 
     <!-- Popper.JS -->
