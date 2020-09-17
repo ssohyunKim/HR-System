@@ -117,7 +117,7 @@
 				          <label for="root"><img src="${root}/resources/img/minus.png">본사</label>
 				          <ul>
 				              <li><input type="checkbox" id="node1">
-				                  <label for="node1"><img src="${root}/resources/img/minus.png" id=minus>개발부</label>
+				                  <label for="node1" id="dname"><img src="${root}/resources/img/minus.png" id=minus>개발부</label>
 				                  <ul>
 				                      <li>node11</li>
 				                      <li>node12</li>
@@ -156,7 +156,11 @@
 							</tr>
 						</thead>
 						<tbody>
+<<<<<<< HEAD
+							<tr data-toggle="modal" data-target="#click">
+=======
 							<tr>
+>>>>>>> 6b59a65d6df2c57585ad71d0b2dab26a3515286a
 								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
 								<td>김민희</td>
@@ -216,6 +220,209 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+	<!-- 수정 Model -->
+	<div class="modal fade" id="click" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">정보 수정</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+					
+						<!-- 사원번호 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							 사원번호
+								<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							 이름
+								<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							소속부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영부">경영부</option>
+								    <option value="회계부">회계부</option>
+								    <option value="개발부">개발부</option>
+								</select>
+							</div>
+						</div>
+						<!-- 직급  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								 직급
+									<input type="text" class="form-control" name="name">
+							</div>
+						</div>	
+						<!-- 입사일자  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+									입사일자
+									<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+						<!-- 재직구분  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								  재직구분
+									<input type="text" class="form-control" name="name">
+							</div>
+						</div>
+					</div>
+					
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary">확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+	<!-- 추가 Model -->
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">조직 추가</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							소속부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영부">경영부</option>
+								    <option value="회계부">회계부</option>
+								    <option value="개발부">개발부</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 부서명 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								부서명
+								<input type="text" class="form-control" name="name" placeholder="부서명을 입력하세요.">
+							</div>
+						</div>
+						
+						
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-dark">확인</button>
+							
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!--  수정 Model -->
+	<div class="modal fade" id="modModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">조직 수정</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							  이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							소속부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영부">경영부</option>
+								    <option value="회계부">회계부</option>
+								    <option value="개발부">개발부</option>
+								</select>
+							</div>
+						</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+  
+		
+	
+
 
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -231,6 +438,29 @@
 			   document.getElementById("minus").src="${root}/resources/img/plus.png";
 		   });
 		}); */
+
+		
+		$(document).ready(function() {
+			  $("#line").click(function(){
+			        $("#tableModal").modal();
+			    });
+							
+			
+			   $("#btnDel").click (function() {
+				   if(confirm("정말삭제하시겠습니까?")==true){
+					   alert("삭제되었습니다.");
+				   }
+			   });
+			   
+			   $("#dname").dblclick (function() {
+				   var deptName = $('label[id="dname"]').text();
+				   $('select[class="form-control"]').val(''+deptName+'').attr("selected","selected");
+			   });
+			   
+			   
+			});
+		
+
 	</script>
 	
     <script type="text/javascript">
@@ -241,6 +471,6 @@
 						});
 
 					});
-				</script>
+	</script>
 </body>
 </html>
