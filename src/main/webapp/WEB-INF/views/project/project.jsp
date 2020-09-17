@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root}/resources/css/style.css">
-    <link rel="stylesheet" href="${root}/resources/css/project.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
     <!-- AwesomeIcon -->
@@ -23,6 +22,16 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	
+	<!-- datepickers -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
+	
+	<!-- project.js -->
+	<script type="text/javascript" src="${root}/resources/js/project/project.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -124,9 +133,7 @@
 				        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
 				
 				          <!-- Content -->
-				          <a href="#"
-				         	 data-toggle="modal"
-							 data-target="#projectReadModal">
+				          <a href="${root}/project/projectContent.do">
 				            <div class="text-white d-flex h-100 mask blue-gradient-rgba">
 				              <div class="first-content align-self-center p-3">
 				                <h3 class="card-title">프로젝트 이름</h3>
@@ -153,12 +160,9 @@
 				          </div>
 				          <p class="text-muted">프로젝트 현황(25%)</p>
 				          <h4 class="text-uppercase font-weight-bold my-4">@@프로젝트</h4>
-				          <p class="text-muted" align="justify">이 프로젝트는 @@이 주관하는 프로젝트로 ~~~~</p>
 				        </div>
-				
 				    </div>
 				    <!-- Card -->
-				
 				  </div>
 				  <!--Grid column-->
 				
@@ -279,23 +283,45 @@
 				<!-- modal-body -->
 						<div class="modal-body">
 						
-						      <!-- 프로젝트 제목 && 인원수  -->
+						      <!-- 프로젝트 제목  -->
 			                  <div class="form-group row">
-			                     <div class="col-sm-10">
-			                     	
+			                     <div class="col-sm-12">
 			                        <input type="text" class="form-control" name="proName" id="proName" style="display: inline;"  placeholder="제목을 입력하세요.">
 			                     </div>
-			                    		<p style="margin: 6px 13px 0px 0px">인원수</p>
-			                     <div class="col-sm-1.5" style="display: inline;" >
-			                     	              
-			                       <select name="proMax" class="form-control" id="proMax">
-			                            <option value="2">2</option>
-			                            <option value="3">3</option>
-			                            <option value="4">4</option>
-			                            <option value="5">5</option>
-			                        </select>
+			                  </div>
+			                  
+							<!-- 프로젝트 기간 -->
+							<div class="form-group row">
+								  <div class="col-sm-5">
+									<div class="form-group" style="display: inline;"> 
+										 <div class="input-group date" id="fromDate" data-target-input="nearest">
+                							<input type="text" class="form-control datetimepicker-input" data-target="#fromDate" placeholder="시작 날짜를 선택하세요."/>
+                								<div class="input-group-append" data-target="#fromDate" data-toggle="datetimepicker">
+                    								<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                								</div>
+            							</div>
+            							</div>
+									</div>
+									<p style="margin: 6px 6px 8px 8px">~</p>
+									<div class="col-sm-5">
+										<div class="form-group" style="display: inline;"> 
+											  <div class="input-group date" id="toDate" data-target-input="nearest">
+	                							<input type="text" class="form-control datetimepicker-input" data-target="#toDate" placeholder="마감 날짜를 선택하세요."/>
+	              									  <div class="input-group-append" data-target="#toDate" data-toggle="datetimepicker">
+	                   									 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+	              									  </div>
+	          								</div>
+										 </div>
+									 </div> 
+							</div>
+							 
+							 <!-- 프로젝트 참여자 -->
+							   <div class="form-group row">
+			                     <div class="col-sm-12">
+			                        <input type="text" class="form-control" name="proName" id="proName" style="display: inline;"  placeholder="프로젝트 참여자를 선택해주세요.">
 			                     </div>
 			                  </div>
+								
 						
 						
 						
@@ -321,150 +347,26 @@
 </div>
 
 
-<!--Project Read Model -->
-	<div class="modal fade" id="projectReadModal" tabindex="-1"
-		role="dialog">
-		<div class="modal-dialog modal-lg mt-5" role="document">
-			<div class="modal-content">
 
-				<!-- modal-header -->
-				<div class="modal-header">
-					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 읽기</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
+   <!-- jQuery CDN - Slim version (=without AJAX) -->
+   <!-- Popper.JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-				<!-- modal-body -->
-				<div class="modal-body">
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#sidebarCollapse').on('click', function () {
+               $('#sidebar').toggleClass('active');
+               $(this).toggleClass('on');
+           });
+       
 
-					<!-- 프로젝트 제목 && 인원수  -->
-					<div class="form-group row">
-						<div class="col-sm-10">
-							<input type="text" class="form-control-plaintext" name="proName"
-								style="display: inline;" placeholder="@@프로젝트" readonly>
-						</div>
-						<p style="margin: 6px 13px 0px 0px">인원수</p>
-						<div class="col-sm-1.5" style="display: inline;">
-							<select name="proMax" class="form-control-plaintext" readonly>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-						</div>
-					</div>
+       
+       });
 
-					<!-- 글 내용 -->
-					<div class="form-group row">
-						<div class="col-sm-12">
-							<textarea class="form-control-plaintext" rows="20"
-								name="proContent" placeholder="이 프로젝트는 @@이 주관하는 프로젝트로 ~~~ " readonly></textarea>
-						</div>
-					</div>
+       
+   </script>
 
-					<!-- 팀장이면 modal-footer -->
-					<%-- <c:if test="${memberDto.memLevel=='팀장'}"> --%>
-						<div class="modal-footer justify-content-right">
-							<div>
-								<button id="deleteBtn" type="button" class="btn btn-secondary">삭제</button>
-								<button id="updateBtn" type="button" class="btn btn-primary">수정</button>
-							</div>
-						</div>
-					<%-- </c:if> --%>
-					<!-- 팀원이면 modal-footer -->
-					<%-- <c:if test="${memberDto.memLevel=='팀원'}"> --%>
-					<!-- 	<div class="modal-footer justify-content-right">
-							<div>
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal">확인</button>
-							</div>
-						</div> -->
-					<%-- </c:if> --%>
-
-				</div>
-
-			</div>
-		</div>
-	</div>
-	
-	
-<!--Project Update Model -->
-	<div class="modal fade" id="projectUpdateModal" tabindex="-1"
-		role="dialog">
-		<div class="modal-dialog modal-lg mt-5" role="document">
-			<div class="modal-content">
-
-				<!-- modal-header -->
-				<div class="modal-header">
-					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 읽기</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-
-
-					<input id="proNum" type="hidden" name="proNum" value="${proNum}" />
-					<!-- modal-body -->
-					<div class="modal-body">
-
-						<!-- 프로젝트 제목 && 인원수  -->
-						<div class="form-group row">
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="proName" name="proName"
-									style="display: inline;" placeholder="제목을 입력하세요.">
-							</div>
-							<p style="margin: 6px 13px 0px 0px">인원수</p>
-							<div class="col-sm-1.5" style="display: inline;">
-								<select name="proMax" id="proMax" class="form-control">
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</div>
-						</div>
-
-						<!-- 글 내용 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-								<textarea class="form-control-plaintext" rows="20"
-									name="proContent" id="proContent" placeholder="글을 입력하세요."></textarea>
-							</div>
-						</div>
-
-
-						<!-- modal-footer -->
-						<div class="modal-footer justify-content-right">
-							<div>
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal">취소</button>
-								<button type="button" class="btn btn-primary" onclick="updatePjt('${root}')">완료</button>
-							</div>
-						</div>
-					</div>
-			</div>
-		</div>
-	</div>	
-
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('on');
-            });
-
-        });
-    </script>
 </body>
 </html>

@@ -40,22 +40,14 @@
 	function button_event(root) {
 
 		 if (confirm("출퇴근 정보를 수정하시겠습니까?") == true){    //확인
-			
+			 debugger;
 		     document.form.submit();
 		     var url = root+"/commute/commuteMain";
 	         location.href=url;
-	        
-	         window.open('', '_self', '');
-	         window.close();
-	         return false;
-
 		 }else{   //취소
 
+				self.close();
 
-			 window.open('', '_self', '');
-			   window.close();
-			   return false;
-	
 
 		 }
 	}
