@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
 	
+	
 	<!-- project.js -->
 	<script type="text/javascript" src="${root}/resources/js/project/project.js"></script>
 </head>
@@ -122,13 +123,16 @@
 								data-max="${projectDto.proMax}"
 								data-content="${projectDto.proContent}" data-toggle="modal"
 								data-target="#projectReadModal"> --%>
+							<div class="card shadow mb-4 border-bottom-primary">
 							<a href="#"
 								data-toggle="modal"
 								data-target="#projectReadModal">	
-								<div class="alert alert-primary bg-primary p-3 rounded-lg text-center">
-									<b class="text-white font-weight-bolder">@@프로젝트</b>
-								</div>
+								
+								<button type="button" class="btn btn-primary btn-block">
+									@@프로젝트
+								</button>
 							</a>	
+							</div>
 					<%--		</a>
 					 	</c:if>
 					</c:forEach> --%>
@@ -143,11 +147,7 @@
 										<input id="pro-num" type="hidden" name="proNum"
 											value="${proNum }" />
 
-										<!-- sender, subject, state -->
-											<!-- sender -->
-											<input class="work-sender" type="hidden" name="workSender"
-												value="${sessionScope.memberDto.memId }" />
-
+										
 											<!-- 본인 -->
 											<div class="form-group row">
 											 <div class="col-sm-6">
@@ -180,6 +180,22 @@
 														 </div> 
 												</div>
 									
+										<!-- 프로젝트 진척도 -->
+										<div class="col-sm-6">
+										 	업무 진행 사항
+										</div>
+										
+										<div class="form-group row">
+										
+											<div class="col-sm-12">
+												 <div class="progress">
+   													 <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+     													 <span class="sr-only">70% Complete</span>
+   													 </div>
+ 												 </div>
+											</div>
+										</div>
+										
 
 										<!-- 업무내용 -->
 										<div class="form-group row">
