@@ -81,14 +81,16 @@
 
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/manage/resource.do">인사관리</a></li>
-				<li><a href="#">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
 				<li><a href="#">복리후생</a></li>
-				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트관리</a></li>
+				<li><a href="${root}/manage/resource.do">인사관리</a></li>
+				<li><a href="${root}/manage/salary.do">급여관리</a></li>
+				<li><a href="#">평가관리</a></li>
+				<li><a href="#">조직관리</a></li>
+			</ul>
+			<ul class="list-unstyled">
+				<li><a href="#">프로젝트</a></li>
 				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
