@@ -33,20 +33,17 @@
 <script>
 
 
-	function funcCancel(){
-		self.close();
-	}
 	
-	function button_event(root) {
-
+	function button_event1(root) {
 		 if (confirm("출퇴근 정보를 수정하시겠습니까?") == true){    //확인
-			 debugger;
+			 
 		     document.form.submit();
 		     var url = root+"/commute/commuteMain";
-	         location.href=url;
+	         location.href=url; 
+	         
 		 }else{   //취소
-
-				self.close();
+			 debugger;
+			 self.close();
 
 
 		 }
@@ -374,7 +371,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary" onclick="button_event('${root}','${salesDto.sales_number}')">수정완료</button>
+							<button type="submit" class="btn btn-primary" onclick="button_event1('${root}')">수정완료</button>
 						</div>
 					</div>
 				</form>

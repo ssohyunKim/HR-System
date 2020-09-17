@@ -37,26 +37,20 @@
 		self.close();
 	}
 	
-	 function popupSubmit() {
-		 if (confirm("작성된 평가서를 삭제하시겠습니까?") == true){ 
-		    window.opener.name = "parentPage"; // 부모창의 이름 설정
+	function button_event1(root) {
 
-		    document.popForm.target = "parentPage"; // 타켓을 부모창으로 설정
+		 if (confirm("작성된 평가서를 삭제하시겠습니까?") == true){    //확인
+			 debugger;
+		     document.form.submit();
+		     var url = root+"/assess/assessMain";
+	         location.href=url;
+	         
+		 }else{   //취소
 
-		    document.popForm.action = "/assess/assessMain.do";  //부모창에 호출될 url 
+				self.close();
 
-		    document.popForm.submit();
-
-		    self.close();
 		 }
-		 
-	 }else{   //취소
-
-			self.close();
-
-	 }
-	 
-		}
+	}
 
 
 
@@ -69,9 +63,7 @@
 	         location.href=url;
 	         
 		 }else{   //취소
-
 				self.close();
-
 		 }
 	}
 	function button_event3(root) {
@@ -518,7 +510,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  onclick="popupSubmit('${root}','${salesDto.sales_number}')" >확인</button>
+							<button type="submit" class="btn btn-primary"  onclick="button_event1('${root}','${salesDto.sales_number}')" >확인</button>
 						</div>
 					</div>
 				</form>
