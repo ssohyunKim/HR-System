@@ -58,6 +58,10 @@
       	margin-left:5%;
       }
       
+      #btnContainer{
+      	margin-top:5%;
+      }
+      
     </style>
 
 </head>
@@ -77,14 +81,16 @@
 
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/manage/resource.do">인사관리</a></li>
-				<li><a href="#">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
 				<li><a href="#">복리후생</a></li>
-				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트관리</a></li>
+				<li><a href="${root}/manage/resource.do">인사관리</a></li>
+				<li><a href="${root}/manage/salary.do">급여관리</a></li>
+				<li><a href="#">평가관리</a></li>
+				<li><a href="#">조직관리</a></li>
+			</ul>
+			<ul class="list-unstyled">
+				<li><a href="#">프로젝트</a></li>
 				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
@@ -109,8 +115,13 @@
 
 			<!-- Page Content  -->
 			<div id="content">
-	 <div class="line"></div>
+				 <div class="line"></div>
 				 <div class="container" id="treeContainer">
+				 	<div class="container" id="btnContainer">
+				 		<button type="button" id="btnAdd" data-toggle="modal" data-target="#addModal">추가</button>
+				 		<button type="button" id="btnMod" data-toggle="modal" data-target="#modModal">수정</button>
+				 		<button type="button" id="btnDel">삭제</button>
+				 	</div>
 					 <ul class="tree">
 				        <li>
 				          <input type="checkbox" id="root">
@@ -156,11 +167,7 @@
 							</tr>
 						</thead>
 						<tbody>
-<<<<<<< HEAD
 							<tr data-toggle="modal" data-target="#click">
-=======
-							<tr>
->>>>>>> 6b59a65d6df2c57585ad71d0b2dab26a3515286a
 								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
 								<td>김민희</td>
@@ -220,7 +227,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
 	<!-- 수정 Model -->
 	<div class="modal fade" id="click" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
@@ -423,7 +429,7 @@
 		
 	
 
-
+	
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -438,7 +444,6 @@
 			   document.getElementById("minus").src="${root}/resources/img/plus.png";
 		   });
 		}); */
-
 		
 		$(document).ready(function() {
 			  $("#line").click(function(){
@@ -460,7 +465,7 @@
 			   
 			});
 		
-
+		   
 	</script>
 	
     <script type="text/javascript">

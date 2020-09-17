@@ -30,8 +30,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
 	
-	<!-- card -->
- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	
 	<!-- project.js -->
 	<script type="text/javascript" src="${root}/resources/js/project/project.js"></script>
@@ -105,15 +103,7 @@
         <div class="container-fluid">
 
 
-          <!-- Page Content  -->
-          <!--팀장만  글 작성 버튼 -->
-		<%-- <c:if test= "${memberDto.memLevel eq'팀장'}">  --%>
-		   <a href="#">
-         		<i class="far fa-edit fa-2x" style="float:right" data-toggle="modal" data-target="#projectWriteModal"></i>
-      		</a>
-		         
       
-	<%-- 	</c:if> --%>
           <div id="content">
               <div>
               </div>
@@ -124,44 +114,116 @@
               </div>
               
               <!-- project Card  -->
-				<!--Grid row-->
-				<div class="row">
-				
-				  <!--Grid column-->
-				  <div class="col-md-6 mb-4">
-				
-				    <!-- Card -->
-				    <div class="card gradient-card">		     
-				          <!-- Content -->
-				          <a href="${root}/project/projectContent.do">
-				          <div class="card bg-warning">
-				               <div class="card-body text-center">
-				               <p class="card-text">@@ 프로젝트</p>
-				               
-				                <div class="progress">
-									 <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-											 <span class="sr-only">70% Complete</span>
-									 </div>
- 								</div>
-				              </div>
-				            </div>
-				          </a>
-				        </div>
-				    </div>
-				    <!-- Card -->
-				  </div>			
+              <!-- 프로젝트 상세 보기 -->
+					<%-- <c:forEach var="projectDto" items="${projectDtoArray}">
+						<c:if test="${projectDto.proNum eq proNum}">
+							<a href="#" 
+								data-num = "${projectDto.proNum}"
+								data-name="${projectDto.proName}"
+								data-max="${projectDto.proMax}"
+								data-content="${projectDto.proContent}" data-toggle="modal"
+								data-target="#projectReadModal"> --%>
+							<div class="card shadow mb-4 border-bottom-primary">
+							<a href="#"
+								data-toggle="modal"
+								data-target="#projectReadModal">	
+								
+								<button type="button" class="btn btn-primary btn-block">
+									@@프로젝트
+								</button>
+							</a>	
+							</div>
+					<%--		</a>
+					 	</c:if>
+					</c:forEach> --%>
+					
+					<div class="card shadow mb-4 border-bottom-primary">
+							<!-- Card Body -->
+							<div class="card-body">
+
+								<!-- 일감 생성 폼 -->
+								<form id="work-form">
+									<div class="o-hidden">
+										<input id="pro-num" type="hidden" name="proNum"
+											value="${proNum }" />
+
+										
+											<!-- 본인 -->
+											<div class="form-group row">
+											 <div class="col-sm-6">
+											 	000님
+											 </div>
+											</div>
+											<!-- date picker -->
+											<!-- 프로젝트 기간 -->
+												<div class="form-group row">
+													  <div class="col-sm-5">
+														<div class="form-group" style="display: inline;"> 
+															 <div class="input-group date" id="fromDate" data-target-input="nearest">
+					                							<input type="text" class="form-control datetimepicker-input" data-target="#fromDate" placeholder="시작 날짜를 선택하세요."/>
+					                								<div class="input-group-append" data-target="#fromDate" data-toggle="datetimepicker">
+					                    								<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+					                								</div>
+					            							</div>
+					            							</div>
+														</div>
+														<p style="margin: 6px 6px 8px 8px">~</p>
+														<div class="col-sm-5">
+															<div class="form-group" style="display: inline;"> 
+																  <div class="input-group date" id="toDate" data-target-input="nearest">
+						                							<input type="text" class="form-control datetimepicker-input" data-target="#toDate" placeholder="마감 날짜를 선택하세요."/>
+						              									  <div class="input-group-append" data-target="#toDate" data-toggle="datetimepicker">
+						                   									 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+						              									  </div>
+						          								</div>
+															 </div>
+														 </div> 
+												</div>
+									
+										<!-- 프로젝트 진척도 -->
+										<div class="col-sm-6">
+										 	업무 진행 사항
+										</div>
+										
+										<div class="form-group row">
+										
+											<div class="col-sm-12">
+												 <div class="progress">
+   													 <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+     													 <span class="sr-only">70% Complete</span>
+   													 </div>
+ 												 </div>
+											</div>
+										</div>
+										
+
+										<!-- 업무내용 -->
+										<div class="form-group row">
+											<div class="col-sm-12">
+												<textarea class="form-control" name="workContent" placeholder="업무내용을 입력하세요"></textarea>
+											</div>
+										</div>
+										<!-- 저장 -->
+										<button type="button" class="btn btn-primary" onclick="writePjt('${root}')" style="float:right">작성 완료</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					
+					
+
           </div>
         </div>
     </div>
 
-<!-- Write Model -->
-<div class="modal fade" id="projectWriteModal" tabindex="-1" role="dialog">
+<!-- Read Model -->
+<div class="modal fade" id="projectReadModal" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-lg mt-5" role="document">
 		<div class="modal-content">
 
 				<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 생성</h5>
+					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 읽기</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -173,7 +235,7 @@
 						      <!-- 프로젝트 제목  -->
 			                  <div class="form-group row">
 			                     <div class="col-sm-12">
-			                        <input type="text" class="form-control" name="proName" id="proName" style="display: inline;"  placeholder="제목을 입력하세요.">
+			                        <input type="text" class="form-control" name="proName" id="proName" style="display: inline;"  placeholder="@@프로젝트">
 			                     </div>
 			                  </div>
 			                  
@@ -182,7 +244,7 @@
 								  <div class="col-sm-5">
 									<div class="form-group" style="display: inline;"> 
 										 <div class="input-group date" id="fromDate" data-target-input="nearest">
-                							<input type="text" class="form-control datetimepicker-input" data-target="#fromDate" placeholder="시작 날짜를 선택하세요."/>
+                							<input type="text" class="form-control datetimepicker-input" data-target="#fromDate" placeholder="시작 날짜"/>
                 								<div class="input-group-append" data-target="#fromDate" data-toggle="datetimepicker">
                     								<div class="input-group-text"><i class="fa fa-calendar"></i></div>
                 								</div>
@@ -193,7 +255,7 @@
 									<div class="col-sm-5">
 										<div class="form-group" style="display: inline;"> 
 											  <div class="input-group date" id="toDate" data-target-input="nearest">
-	                							<input type="text" class="form-control datetimepicker-input" data-target="#toDate" placeholder="마감 날짜를 선택하세요."/>
+	                							<input type="text" class="form-control datetimepicker-input" data-target="#toDate" placeholder="마감 날짜"/>
 	              									  <div class="input-group-append" data-target="#toDate" data-toggle="datetimepicker">
 	                   									 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
 	              									  </div>
@@ -251,7 +313,8 @@
 
        
        });
-
+       
+       
        
    </script>
 
