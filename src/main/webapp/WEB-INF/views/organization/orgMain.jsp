@@ -58,6 +58,10 @@
       	margin-left:5%;
       }
       
+      #btnContainer{
+      	margin-top:5%;
+      }
+      
     </style>
 
 </head>
@@ -109,8 +113,13 @@
 
 			<!-- Page Content  -->
 			<div id="content">
-	 <div class="line"></div>
+				 <div class="line"></div>
 				 <div class="container" id="treeContainer">
+				 	<div class="container" id="btnContainer">
+				 		<button type="button" id="btnAdd" data-toggle="modal" data-target="#addModal">추가</button>
+				 		<button type="button" id="btnMod" data-toggle="modal" data-target="#modModal">수정</button>
+				 		<button type="button" id="btnDel">삭제</button>
+				 	</div>
 					 <ul class="tree">
 				        <li>
 				          <input type="checkbox" id="root">
@@ -156,7 +165,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr data-toggle="modal" data-target="#tableModal">
 								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
 								<td>김민희</td>
@@ -217,6 +226,301 @@
 		</div>
 	</div>
 
+
+	<!-- 추가 Model -->
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">조직 추가</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영팀">경영팀</option>
+								    <option value="회계팀">회계팀</option>
+								    <option value="개발팀">개발팀</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 직급  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">사원</option>
+								    <option value="2">주임</option>
+								    <option value="3">대리</option>
+								   	<option value="4">과장</option>
+								    <option value="5">차장</option>
+								    <option value="6">부장</option>
+								</select>
+							</div>
+						</div>
+						
+						<!--직원코드 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직원코드
+								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
+							</div>
+						</div>
+						
+						<!-- 평가  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">A+</option>
+								    <option value="2">A0</option>
+								    <option value="3">B+</option>
+								   	<option value="4">B0</option>
+								    <option value="5">C+</option>
+								    <option value="6">C0</option>
+								    <option value="7">D+</option>
+								    <option value="8">D0</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!--  수정 Model -->
+	<div class="modal fade" id="modModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">조직 수정</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영팀">경영팀</option>
+								    <option value="회계팀">회계팀</option>
+								    <option value="개발팀">개발팀</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 직급  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">사원</option>
+								    <option value="2">주임</option>
+								    <option value="3">대리</option>
+								   	<option value="4">과장</option>
+								    <option value="5">차장</option>
+								    <option value="6">부장</option>
+								</select>
+							</div>
+						</div>
+						
+						<!--직원코드 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직원코드
+								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
+							</div>
+						</div>
+						
+						<!-- 평가  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">A+</option>
+								    <option value="2">A0</option>
+								    <option value="3">B+</option>
+								   	<option value="4">B0</option>
+								    <option value="5">C+</option>
+								    <option value="6">C0</option>
+								    <option value="7">D+</option>
+								    <option value="8">D0</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+		<!-- table 수정,삭제 Model -->
+	<div class="modal fade" id="tableModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">조직 수정</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영팀">경영팀</option>
+								    <option value="회계팀">회계팀</option>
+								    <option value="개발팀">개발팀</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 직급  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">사원</option>
+								    <option value="2">주임</option>
+								    <option value="3">대리</option>
+								   	<option value="4">과장</option>
+								    <option value="5">차장</option>
+								    <option value="6">부장</option>
+								</select>
+							</div>
+						</div>
+						
+						<!--직원코드 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직원코드
+								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
+							</div>
+						</div>
+						
+						<!-- 평가  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">A+</option>
+								    <option value="2">A0</option>
+								    <option value="3">B+</option>
+								   	<option value="4">B0</option>
+								    <option value="5">C+</option>
+								    <option value="6">C0</option>
+								    <option value="7">D+</option>
+								    <option value="8">D0</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">수정</button>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">삭제</button>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<!-- <button type="submit" class="btn btn-primary">확인</button> -->
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -231,6 +535,14 @@
 			   document.getElementById("minus").src="${root}/resources/img/plus.png";
 		   });
 		}); */
+		
+		$(document).ready(function() {
+			   $("#btnDel").click (function() {
+				   if(confirm("정말삭제하시겠습니까?")==true){
+					   alert("삭제되었습니다.");
+				   }
+			   });
+			}); 
 	</script>
 	
     <script type="text/javascript">
