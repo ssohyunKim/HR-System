@@ -39,15 +39,23 @@
 	
 	function button_event(root) {
 
-		 if (confirm("작성된 평가서를 등록하시겠습니까?") == true){    //확인
+		 if (confirm("출퇴근 정보를 수정하시겠습니까?") == true){    //확인
 			
 		     document.form.submit();
-		     var url = root+"/assess/assessMain";
+		     var url = root+"/commute/commuteMain";
 	         location.href=url;
-	         
+	        
+	         window.open('', '_self', '');
+	         window.close();
+	         return false;
+
 		 }else{   //취소
 
-				self.close();
+
+			 window.open('', '_self', '');
+			   window.close();
+			   return false;
+	
 
 		 }
 	}
@@ -190,7 +198,7 @@
 								<th scope="col">날짜</th>
 								<th scope="col">출근시간</th>
 								<th scope="col">퇴근시간</th>
-								<th scope="col">지각여부</th>
+								<th scope="col">근태</th>
 								<th scope="col">비고</th>
 							</tr>
 						</thead>
@@ -285,14 +293,14 @@
 	</div>
 	
 	
-		<!-- 등록 Model -->
+		<!-- 수정 Model -->
 	<div class="modal fade" id="click" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
 				<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">등록하기</h5>
+					<h5 class="m-0 text-primary p-2">근퇴 수정하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -325,28 +333,42 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요." readonly>
 							</div>
 						</div>
-						<!-- 발령구분 -->
+						
+						<!-- 사번 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							발령구분
+							사번
+								<input type="text" class="form-control" name="number" placeholder="사번을 입력하세요." readonly>
+							</div>
+						</div>
+						
+						<!-- 출근시간 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							<div>출퇴근시간</div>
+								<form name="해당 폼의 이름" action="값을 보낼 주소" method="post" style="padding-left:15px;">
+        							<input type='time' name='fromSul' value='02:04'/> ~
+        							<input type='time' name='toSul' value='14:44'/>
+   								</form>
+							</div>
+						</div>
+			
+						<!-- 지각여부 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								근태
 			                    <select name="category" class="form-control">
-								    <option value="직급 변경">직급 변경</option>
-								    <option value="부서 이동">부서 이동</option>
-								    <option value="고용형태 변경">고용형태 변경</option>
-								    <option value="기타">기타</option>
+								    <option value="직급 변경">정상출근</option>
+								    <option value="부서 이동">지각</option>
+								    <option value="직급 변경">휴가</option>
+								    <option value="부서 이동">조퇴</option>
 								</select>
 							</div>
 						</div>
-						<!-- 발령내용 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							발령내용
-								<input type="text" class="form-control" name="content" placeholder="발령내용을 입력하세요.">
-							</div>
-						</div>
+						
 						<!-- 비고 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
@@ -360,7 +382,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary">확인</button>
+							<button type="submit" class="btn btn-primary" onclick="button_event('${root}','${salesDto.sales_number}')">수정완료</button>
 						</div>
 					</div>
 				</form>
