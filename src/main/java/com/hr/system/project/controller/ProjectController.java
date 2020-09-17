@@ -19,4 +19,11 @@ public class ProjectController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/project/projectContent.do", method=RequestMethod.GET)
+	public ModelAndView ProjectContent(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request", request);
+		
+		return mav;
+	}
 }
