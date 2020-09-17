@@ -37,9 +37,46 @@
 		self.close();
 	}
 	
-	function button_event(root) {
+	 function popupSubmit() {
+		 if (confirm("작성된 평가서를 삭제하시겠습니까?") == true){ 
+		    window.opener.name = "parentPage"; // 부모창의 이름 설정
 
-		 if (confirm("작성된 평가서를 등록하시겠습니까?") == true){    //확인
+		    document.popForm.target = "parentPage"; // 타켓을 부모창으로 설정
+
+		    document.popForm.action = "/assess/assessMain.do";  //부모창에 호출될 url 
+
+		    document.popForm.submit();
+
+		    self.close();
+		 }
+		 
+	 }else{   //취소
+
+			self.close();
+
+	 }
+	 
+		}
+
+
+
+	function button_event2(root) {
+
+		 if (confirm("작성된 평가서를 삭제하시겠습니까?") == true){    //확인
+			 debugger;
+		     document.form.submit();
+		     var url = root+"/assess/assessMain";
+	         location.href=url;
+	         
+		 }else{   //취소
+
+				self.close();
+
+		 }
+	}
+	function button_event3(root) {
+
+		 if (confirm("작성된 평가서로 수정하시겠습니까?") == true){    //확인
 			
 		     document.form.submit();
 		     var url = root+"/assess/assessMain";
@@ -51,7 +88,6 @@
 
 		 }
 	}
-
 </script>
 
 <body>
@@ -190,8 +226,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<!-- <th scope="row"></th> -->
+							<tr data-toggle="modal" data-target="#click">
 								<td>2020-01-01</td>
 								<td>경영팀</td>
 								<td>김민희</td>
@@ -270,14 +305,14 @@
 		</div>
 	</div>
 	
-		<!-- 등록 Model -->
-	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
+			<!-- 클릭 Model -->
+	<div class="modal fade" id="click" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
 				<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">평가 등록하기</h5>
+					<h5 class="m-0 text-primary p-2">평가 수정하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -291,17 +326,19 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							날짜
-										<div class="input-group date" id="fromDate"
+									<div class="form-group">
+										<div class="input-group date" id="Date"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
-											<div class="input-group-append" data-target="#fromDate"
+												data-target="#Date" value="09/15/2020">
+											<div class="input-group-append" data-target="#Date"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
 													<i class="fa fa-calendar"></i>
 												</div>
 											</div>
 										</div>
+									</div> 
 							</div>
 						</div>
 						<!-- 이름 -->
@@ -369,7 +406,119 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+							<button type="submit" class="btn btn-danger"  onclick="button_event2('${root}','${salesDto.sales_number}')" >삭제</button>
+							<button type="submit" class="btn btn-primary"  onclick="button_event3('${root}','${salesDto.sales_number}')" >수정완료</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+		<!-- 등록 Model -->
+	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">평가 등록하기</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+									<div class="form-group">
+										<div class="input-group date" id="Date1"
+											data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input"
+												data-target="#Date1" value="09/15/2020">
+											<div class="input-group-append" data-target="#Date1"
+												data-toggle="datetimepicker">
+												<div class="input-group-text">
+													<i class="fa fa-calendar"></i>
+												</div>
+											</div>
+										</div>
+									</div> 
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+							</div>
+						</div>
+						<!-- 부서  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							부서
+			                    <select name="category1" class="form-control">
+								    <option value="경영팀">경영팀</option>
+								    <option value="회계팀">회계팀</option>
+								    <option value="개발팀">개발팀</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 직급  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">사원</option>
+								    <option value="2">주임</option>
+								    <option value="3">대리</option>
+								   	<option value="4">과장</option>
+								    <option value="5">차장</option>
+								    <option value="6">부장</option>
+								</select>
+							</div>
+						</div>
+						
+						<!--직원코드 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직원코드
+								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
+							</div>
+						</div>
+						
+						<!-- 평가  -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							직급
+			                    <select name="category2" class="form-control">
+								    <option value="1">A+</option>
+								    <option value="2">A0</option>
+								    <option value="3">B+</option>
+								   	<option value="4">B0</option>
+								    <option value="5">C+</option>
+								    <option value="6">C0</option>
+								    <option value="7">D+</option>
+								    <option value="8">D0</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary"  onclick="popupSubmit('${root}','${salesDto.sales_number}')" >확인</button>
 						</div>
 					</div>
 				</form>
@@ -395,6 +544,14 @@
 				format: 'L'	
 			});
 
+			$('#Date').datetimepicker({
+				format: 'L'	
+			});
+			
+			$('#Date1').datetimepicker({
+				format: 'L'	
+			});
+			
 			$('#toDate').datetimepicker({
 				format: 'L', 
 				useCurrent: false
