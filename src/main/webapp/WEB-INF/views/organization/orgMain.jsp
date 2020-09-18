@@ -360,7 +360,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="button" class="btn btn-dark">확인</button>
+							<button type="button" class="btn btn-dark" id="btnClose">확인</button>
 							
 						</div>
 					</div>
@@ -460,6 +460,10 @@
 			   $("#dname").dblclick (function() {
 				   var deptName = $('label[id="dname"]').text();
 				   $('select[class="form-control"]').val(''+deptName+'').attr("selected","selected");
+			   });
+			   
+			   $("#btnClose").click(function(){
+				  $("#addModal").modal('hide'); 
 			   });
 			   
 			   
