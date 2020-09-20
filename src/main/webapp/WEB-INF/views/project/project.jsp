@@ -131,15 +131,15 @@
 				  <div class="col-md-6 mb-4">
 				
 				    <!-- Card -->
+				    <a href="${root}/project/projectContent.do">
 				    <div class="card gradient-card">		     
 				          <!-- Content -->
-				          <a href="${root}/project/projectContent.do">
-				          <div class="card bg-warning">
+				          <div class="card" style="background-color: #6eb7d0;">
 				               <div class="card-body text-center">
-				               <p class="card-text">@@ 프로젝트</p>
+				               <p class="card-text" style="color: #fff;">@@ 프로젝트</p>
 				               
 				                <div class="progress">
-									 <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+									 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color:#265f77">
 											 <span class="sr-only">70% Complete</span>
 									 </div>
  								</div>

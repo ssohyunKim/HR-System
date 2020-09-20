@@ -128,7 +128,7 @@
 								data-toggle="modal"
 								data-target="#projectReadModal">	
 								
-								<button type="button" class="btn btn-primary btn-block">
+								<button type="button" class="btn btn-primary btn-block" style="background-color: #7386d5; border-color:#7386d5;">
 									@@프로젝트
 								</button>
 							</a>	
@@ -189,7 +189,7 @@
 										
 											<div class="col-sm-12">
 												 <div class="progress">
-   													 <div class="progress-bar bg-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+   													 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #414c78;">
      													 <span class="sr-only">70% Complete</span>
    													 </div>
  												 </div>
