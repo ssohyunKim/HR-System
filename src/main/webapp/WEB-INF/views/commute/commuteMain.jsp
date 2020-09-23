@@ -28,28 +28,22 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
-
-</head>
-<script>
-
-
-	
-	function button_event1(root) {
-		 if (confirm("출퇴근 정보를 수정하시겠습니까?") == true){    //확인
-			 
-		     document.form.submit();
-		     var url = root+"/commute/commuteMain";
-	         location.href=url; 
-	         
-		 }else{   //취소
-			 debugger;
-			 self.close();
-
-
-		 }
-	}
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $("#btnClick").click(function(){
+		        $("#click").modal('hide'); 
+		      });
+		});
+		
+		$(document).ready(function() {
+			$("#btnClick").click(function(){
+				
+			});
+		});
 
 </script>
+</head>
+
 
 <body>
 <div class="wrapper">
@@ -371,7 +365,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary" onclick="button_event1('${root}')">수정완료</button>
+							<button type="submit" class="btn btn-primary" id="btnClick">수정완료</button>
 						</div>
 					</div>
 				</form>
