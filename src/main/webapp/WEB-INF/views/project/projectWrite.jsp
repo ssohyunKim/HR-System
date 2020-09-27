@@ -39,8 +39,13 @@
 	 
 	 <!-- project.js -->
 	<script type="text/javascript" src="${root}/resources/js/project/project.js"></script>
-
 	 
+	 <style>
+	.ui-autocomplete { 
+	    overflow-y: scroll; 
+	    overflow-x: hidden;
+	    }
+	</style>
  
 </head>
 
@@ -112,17 +117,6 @@
         </div>
 
         <div class="container-fluid">
-
-
-          <!-- Page Content  -->
-          <!--팀장만  글 작성 버튼 -->
-		<%-- <c:if test= "${memberDto.memLevel eq'팀장'}">  --%>
-		   <a href="${root}/project/projectWrite.do">
-         		<i class="far fa-edit fa-2x" style="float:right"></i>
-      		</a>
-		         
-      
-	<%-- 	</c:if> --%>
           <div id="content">
               <div>
               </div>
@@ -137,48 +131,11 @@
 				<div class="row">
 				
 				  <!--Grid column-->
-				  <div class="col-md-6 mb-4">
-				
-				    <!-- Card -->
-				    <a href="${root}/project/projectContent.do">
-				    <div class="card gradient-card">		     
-				          <!-- Content -->
-				          <div class="card" style="background-color: #6eb7d0;">
-				               <div class="card-body text-center">
-				               <p class="card-text" style="color: #fff;">@@ 프로젝트</p>
-				               
-				                <div class="progress">
-									 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color:#265f77">
-											 <span class="sr-only">70% Complete</span>
-									 </div>
- 								</div>
-				              </div>
-				            </div>
-				          </a>
-				        </div>
-				    </div>
-				    <!-- Card -->
-				  </div>			
-          </div>
-        </div>
-    </div>
-
-<!-- Write Model -->
-<div class="modal fade" id="projectWriteModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog modal-lg mt-5" role="document">
-		<div class="modal-content">
-
+				  <div class="col-md-10 mb-4">
 				<!-- modal-header -->
-				<div class="modal-header">
-					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 생성</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-				</div>
+				
 				
 				<!-- modal-body -->
-						<div class="modal-body">
-						
 						      <!-- 프로젝트 제목  -->
 			                  <div class="form-group row">
 			                     <div class="col-sm-12">
@@ -237,11 +194,12 @@
 							</div>
 							</div>
 						</div>
-					
-	</div>
+
 </div>
 </div>
 
+				  </div>			
+</div>
 
 
    <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -263,6 +221,73 @@
 
    </script>
 
+<!-- <script>	
+
+   $(function() {	//화면 다 뜨면 시작
+		$("#searchInput").autocomplete({
+			source : function(request, response ) {
+				//console.log(root);
+	             $.ajax({
+	                    type: 'GET',
+	                    url: "${root}/project/json.do",
+	                    dataType: "json",
+	                    success: function(data) {
+	                        //서버에서 json 데이터 response 후 목록에 추가
+	                        response(
+	                            $.map(data, function(item) {	//json[i] 번째 에 있는게 item 임.
+	                                return {
+	                                    label: item+"label",	//UI 에서 보여지는 글자, 실제 검색어랑 비교 대상
+	                                    value: item,	//그냥 사용자 설정값?
+	                                    test : item+"test"	//이런식으로 사용
+	                                 }
+	                            })
+	                        );
+	                    },
+	                    error:function(request,status,error){
+	                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	                    }
+
+	               });
+	             
+	            },	
+		}).autocomplete( "instance" )._renderItem = function( ul, item ) {    //요 부분이 UI를 마음대로 변경하는 부분
+	              return $( "<li>" )	//기본 tag가 li로 되어 있음 
+	              .append( "<div>" + item.value + "<br>" + item.label + "</div>" )	//여기에다가 원하는 모양의 HTML을 만들면 UI가 원하는 모양으로 변함.
+	              .appendTo( ul );
+	       };
+	});
+         
+
+	
+</script> -->
+
+<script type="text/javascript">
+ 
+	$(document).ready(function() {
+		 $("#searchInput").autocomplete({
+			 source : function(request, response) {
+			 	console.log(request);
+				 $.ajax({
+				 
+					 url : "${root}/project/autocomplete.do",
+					 type : "post",
+					 dataType : "json",
+					 data: request,
+					 
+					 success : function(data) {
+					 
+					 var result = data;
+					 response(result);
+					 },
+					 
+					 error : function(data) {
+					 alert("에러가 발생하였습니다.")
+					 }
+				 });
+			 }
+		 });
+	});
+</script>
 
 
 

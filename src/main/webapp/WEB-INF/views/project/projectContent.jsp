@@ -294,7 +294,90 @@
 	</div>
 </div>
 </div>
+<!--Project Update Model -->
+	<div class="modal fade" id="projectUpdateModal" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
 
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 읽기</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+
+					<input id="proNum" type="hidden" name="proNum" value="${proNum}" />
+					<!-- modal-body -->
+					<div class="modal-body">
+
+						<!-- 프로젝트 제목 && 인원수  -->
+						<div class="form-group row">
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="proName" name="proName"
+									style="display: inline;" placeholder="제목을 입력하세요.">
+							</div>
+							<p style="margin: 6px 13px 0px 0px">인원수</p>
+							<div class="col-sm-1.5" style="display: inline;">
+								<select name="proMax" id="proMax" class="form-control">
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- 글 내용 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								<textarea class="form-control-plaintext" rows="20"
+									name="proContent" id="proContent" placeholder="글을 입력하세요."></textarea>
+							</div>
+						</div>
+
+
+						<!-- modal-footer -->
+						<div class="modal-footer justify-content-right">
+							<div>
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">취소</button>
+								<button type="button" class="btn btn-primary" onclick="updatePjt('${root}')">완료</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--remove Confirm Model -->
+	<div class="modal fade" id="removeConfirmModal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">삭제</h5>
+					<button class="close" type="button" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<input type="hidden" id="proNum" name="proNum" value="" /> 
+				<div class="modal-body">정말 삭제하시겠습니까?</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" type="button"
+						data-dismiss="modal">아니요</button>
+					<button class="btn btn-primary" type="button"
+						onclick="projectDelete('${root}')">네</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
 
    <!-- jQuery CDN - Slim version (=without AJAX) -->
