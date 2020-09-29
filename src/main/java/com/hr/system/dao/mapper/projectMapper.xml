@@ -6,9 +6,15 @@
     
 <mapper namespace="dto.employeeDto">
 	
+	
 
  <select id="project_auto" parameterType="String" resultType="String">
  select name from emp where name like concat('%',concat(UPPER(#{name}),'%')) or 
+                                            name like concat('%',concat(LOWER(#{name}),'%'))
+ </select>
+ 
+  <select id="project_auto2" parameterType="String" resultType="int">
+ select emp_no from emp where name like concat('%',concat(UPPER(#{name}),'%')) or 
                                             name like concat('%',concat(LOWER(#{name}),'%'))
  </select>
 </mapper>

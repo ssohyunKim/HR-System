@@ -1,5 +1,7 @@
 package com.hr.system.project.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
@@ -50,51 +52,27 @@ public class projectController {
 		return mav;
 	}
 	
-	/*
-	 * //스프링 컨트롤러 부분
-	 * 
-	 * @RequestMapping(value = "/project/json.do", method = RequestMethod.GET,
-	 * produces="text/plain;charset=UTF-8")
-	 * 
-	 * @ResponseBody public String json(Locale locale, Model model) {
-	 * System.out.println("OK"); String[] array = {"신라면", "진라면", "라볶이",
-	 * "팥빙수","너구리","삼양라면","안성탕면","불닭볶음면","짜왕","라면사리"};
-	 * 
-	 * Gson gson = new Gson();
-	 * 
-	 * return
-	 * gson.toJson(array);//["김치 볶음밥","신라면","진라면","라볶이","팥빙수","너구리","삼양라면","안성탕면",
-	 * "불닭볶음면","짜왕","라면사리"] }
-	 */
+	
 
 	@RequestMapping(value = "/project/autocomplete.do", method = RequestMethod.POST)
-	 public void AutoTest(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response, projectDto dto){
+	 public void AutoTest(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response, projectDto dto) throws IOException{
 	 String name = request.getParameter("term");
-			 //System.out.println(result);
-	ModelAndView mav = new ModelAndView();
+	 ModelAndView mav = new ModelAndView();
 	 mav.addObject("request", request);
-	 //System.out.println(name);
 	 mav.addObject("name", name);
 	 
 	 projectservice.projectAutocomplete(mav);
-	 //mav.addObject("projectDto", dto);
-	//System.out.println(result);
-	// projectservice.projectAutocomplete(mav);
-	// String result = request.getParameter("term");
+	 projectservice.projectAutocomplete2(mav);
+	  List<String> list = (List)mav.getModel().get("list");
+	  List<Integer> list2 = (List)mav.getModel().get("list2");
 	 
-//	 List list = 
-	// List list = dao.listAll2(result); //result값이 포함되어 있는 emp테이블의 네임을 리턴
-	 //DB
-	 
-//	 JSONArray ja = new JSONArray();
-//	 for (int i = 0; i < list.size(); i++) {
-//		 ja.add(list.get(i).getEname());
-//	 }
-	 
-	// PrintWriter out = resp.getWriter();
-	 
-	// out.print(ja.toString());
-	 
+	 JSONArray ja = new JSONArray();
+	 for (int i = 0; i < list.size(); i++) {
+		 ja.add(list.get(i) + " (사원번호 : " + Integer.toString(list2.get(i)) + ")");
+	 }
+	
+	 PrintWriter out = response.getWriter();	 
+	 out.print(ja.toString()); 
 	 }
 	
 }

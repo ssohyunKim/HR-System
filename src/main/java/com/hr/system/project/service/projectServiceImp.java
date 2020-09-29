@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,9 +34,17 @@ public class projectServiceImp implements projectService {
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		String name = (String)map.get("name");
 		//System.out.println(name);
-		//List<String> list = projectDao.autoComplete(name);
-		projectDao.autoComplete(name);
-		//System.out.println(list);
-		
+		List<String> list = projectDao.autoComplete(name);
+		mav.addObject("list", list);
+
+	}
+	
+	@Override
+	public void projectAutocomplete2(ModelAndView mav) {
+		Map<String, Object>  map = mav.getModelMap();
+		HttpServletRequest request = (HttpServletRequest)map.get("request");
+		String name = (String)map.get("name");
+		List<Integer> list2 = projectDao.autoComplete2(name);
+		mav.addObject("list2", list2);	
 	}
 }

@@ -13,14 +13,16 @@ public class projectDaoImp implements projectDao {
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
+	//사원이름
 	@Override
-	public void autoComplete(String name) {
-		//System.out.println(name);
-		String ho = sqlSessionTemplate.selectOne("project_auto", name);
-		System.out.println(ho);
-		
-		
-		
+	public List<String> autoComplete(String name) {
+		return sqlSessionTemplate.selectList("project_auto", name);
+	}
+	
+	//사원번호
+	@Override
+	public List<Integer> autoComplete2(String name) {
+		return sqlSessionTemplate.selectList("project_auto2", name);
 	}
 	
 }

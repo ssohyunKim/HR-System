@@ -6,6 +6,8 @@ import com.hr.system.project.dto.projectDto;
 
 public interface projectDao {
 
-	void autoComplete(String name);
+	List<String> autoComplete(String name);
+	
+	List<Integer> autoComplete2(String name);
 
 }

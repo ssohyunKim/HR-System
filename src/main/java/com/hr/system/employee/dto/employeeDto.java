@@ -3,7 +3,7 @@ package com.hr.system.employee.dto;
 import java.sql.Date;
 
 public class employeeDto {
-	private int empNo;
+	private int emp_no;
 	private String password;
 	private String name;
 	private String level;
@@ -27,7 +27,7 @@ public class employeeDto {
 	public employeeDto(int empNo, String password, String name, String level, int phone, String email, String address,
 			String address_detail, int zipcode, int account, int bank) {
 		super();
-		this.empNo = empNo;
+		this.emp_no = empNo;
 		this.password = password;
 		this.name = name;
 		this.level = level;
@@ -43,13 +43,13 @@ public class employeeDto {
 
 
 	public int getEmpNo() {
-		return empNo;
+		return emp_no;
 	}
 
 
 
 	public void setEmpNo(int empNo) {
-		this.empNo = empNo;
+		this.emp_no = empNo;
 	}
 
 
@@ -176,7 +176,7 @@ public class employeeDto {
 
 	@Override
 	public String toString() {
-		return "employeeDto [empNo=" + empNo + ", password=" + password + ", name=" + name + ", level=" + level
+		return "employeeDto [empNo=" + emp_no + ", password=" + password + ", name=" + name + ", level=" + level
 				+ ", phone=" + phone + ", email=" + email + ", address=" + address + ", address_detail="
 				+ address_detail + ", zipcode=" + zipcode + ", account=" + account + ", bank=" + bank + "]";
 	}
