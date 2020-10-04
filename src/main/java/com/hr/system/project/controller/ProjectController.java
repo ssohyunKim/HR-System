@@ -54,13 +54,20 @@ public class projectController {
 	
 	
 
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/project/autocomplete.do", method = RequestMethod.POST)
 	 public void AutoTest(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response, projectDto dto) throws IOException{
 	 String name = request.getParameter("term");
 	 ModelAndView mav = new ModelAndView();
 	 mav.addObject("request", request);
+	 String[] split_name = name.split( "," );
+	 int size = split_name.length;
+	 name = split_name[size-1];
+	 name = name.trim();
+	 
 	 mav.addObject("name", name);
 	 
+	  
 	 projectservice.projectAutocomplete(mav);
 	 projectservice.projectAutocomplete2(mav);
 	  List<String> list = (List)mav.getModel().get("list");
@@ -75,4 +82,18 @@ public class projectController {
 	 out.print(ja.toString()); 
 	 }
 	
+	
+	@RequestMapping(value = "/project/writeOk.do", method = RequestMethod.POST)
+	public ModelAndView projectWriteOk(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView(); 
+		//HttpSession session = request.getSession(); 
+		//String aplMemId = (String)session.getAttribute("id");
+		String id = "teamjang";
+		mav.addObject("request",request);
+		projectservice.projectWriteOk(mav);
+		
+		return mav;
+		
+	}
 }
+	

@@ -174,10 +174,7 @@
 			                        <input type="text" class="form-control" id="searchInput" style="display: inline;"  placeholder="프로젝트 참여자를 선택해주세요.">
 			                     </div>
 			                  </div>
-								
-						
-						
-						
+	
 							<!-- 글 내용 -->
 							<div class="form-group row">
 								<div class="col-sm-12">
@@ -221,71 +218,69 @@
 
    </script>
 
-<!-- <script>	
-
-   $(function() {	//화면 다 뜨면 시작
-		$("#searchInput").autocomplete({
-			source : function(request, response ) {
-				//console.log(root);
-	             $.ajax({
-	                    type: 'GET',
-	                    url: "${root}/project/json.do",
-	                    dataType: "json",
-	                    success: function(data) {
-	                        //서버에서 json 데이터 response 후 목록에 추가
-	                        response(
-	                            $.map(data, function(item) {	//json[i] 번째 에 있는게 item 임.
-	                                return {
-	                                    label: item+"label",	//UI 에서 보여지는 글자, 실제 검색어랑 비교 대상
-	                                    value: item,	//그냥 사용자 설정값?
-	                                    test : item+"test"	//이런식으로 사용
-	                                 }
-	                            })
-	                        );
-	                    },
-	                    error:function(request,status,error){
-	                        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	                    }
-
-	               });
-	             
-	            },	
-		}).autocomplete( "instance" )._renderItem = function( ul, item ) {    //요 부분이 UI를 마음대로 변경하는 부분
-	              return $( "<li>" )	//기본 tag가 li로 되어 있음 
-	              .append( "<div>" + item.value + "<br>" + item.label + "</div>" )	//여기에다가 원하는 모양의 HTML을 만들면 UI가 원하는 모양으로 변함.
-	              .appendTo( ul );
-	       };
-	});
-         
-
-	
-</script> -->
-
 <script type="text/javascript">
- 
+ var autodata="";
 	$(document).ready(function() {
-		 $("#searchInput").autocomplete({
+		   function split( val ) {
+		        return val.split( /,\s*/ );
+		    }
+		    function extractLast( term ) {
+		        return split( term ).pop();
+		    }
+		    
+		
+		 $("#searchInput").on("keydown", function( event ) {
+        if(event.keyCode === $.ui.keyCode.TAB && $(this).autocomplete("instance").menu.active) {
+            event.preventDefault();
+
+        	}
+
+    	})
+		 
+		 .autocomplete({
 			 source : function(request, response) {
-			 	console.log(request);
+				 console.log(extractLast(request.term));
 				 $.ajax({
-				 
 					 url : "${root}/project/autocomplete.do",
 					 type : "post",
 					 dataType : "json",
 					 data: request,
-					 
 					 success : function(data) {
-					 
 					 var result = data;
 					 response(result);
+					 autodata = data;
 					 },
 					 
 					 error : function(data) {
 					 alert("에러가 발생하였습니다.")
 					 }
 				 });
-			 }
+			 },
+		   search: function() {
+	            // 최소 입력 길이를 마지막 항목으로 처리합니다.
+	            var term = extractLast(this.value);
+	            if(term.length < 1) {
+	                return false;
+	            }
+	        },
+
+		 	focus:function(){
+		 		return false;
+		 	},
+		 	select : function(event, ui){
+		 		var terms = split(this.value);
+		 		terms.pop();
+		 		terms.push(ui.item.value);
+		 		terms.push("");
+		 		this.value = terms.join(", ");
+		 		return false;
+		 	}
+		 
+		 
+		 
 		 });
+		 
+		 
 	});
 </script>
 
