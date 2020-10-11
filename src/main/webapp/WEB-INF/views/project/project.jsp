@@ -23,13 +23,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 	
-	<!-- datepickers -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
-	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
-	
 	<!-- card -->
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -39,9 +33,7 @@
 	 
 	 <!-- project.js -->
 	<script type="text/javascript" src="${root}/resources/js/project/project.js"></script>
-
 	 
- 
 </head>
 
 
@@ -163,84 +155,7 @@
         </div>
     </div>
 
-<!-- Write Model -->
-<div class="modal fade" id="projectWriteModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog modal-lg mt-5" role="document">
-		<div class="modal-content">
 
-				<!-- modal-header -->
-				<div class="modal-header">
-					<h5 class="m-0 font-weight-bold text-primary p-2">프로젝트 생성</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-				</div>
-				
-				<!-- modal-body -->
-						<div class="modal-body">
-						
-						      <!-- 프로젝트 제목  -->
-			                  <div class="form-group row">
-			                     <div class="col-sm-12">
-			                        <input type="text" class="form-control" name="proName" id="proName" style="display: inline;"  placeholder="제목을 입력하세요.">
-			                     </div>
-			                  </div>
-			                  
-							<!-- 프로젝트 기간 -->
-							<div class="form-group row">
-								  <div class="col-sm-5">
-									<div class="form-group" style="display: inline;"> 
-										 <div class="input-group date" id="fromDate" data-target-input="nearest">
-                							<input type="text" class="form-control datetimepicker-input" data-target="#fromDate" placeholder="시작 날짜를 선택하세요."/>
-                								<div class="input-group-append" data-target="#fromDate" data-toggle="datetimepicker">
-                    								<div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                								</div>
-            							</div>
-            							</div>
-									</div>
-									<p style="margin: 6px 6px 8px 8px">~</p>
-									<div class="col-sm-5">
-										<div class="form-group" style="display: inline;"> 
-											  <div class="input-group date" id="toDate" data-target-input="nearest">
-	                							<input type="text" class="form-control datetimepicker-input" data-target="#toDate" placeholder="마감 날짜를 선택하세요."/>
-	              									  <div class="input-group-append" data-target="#toDate" data-toggle="datetimepicker">
-	                   									 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-	              									  </div>
-	          								</div>
-										 </div>
-									 </div> 
-							</div>
-							 
-							 <!-- 프로젝트 참여자 -->
-							   <div class="form-group row">
-			                     <div class="col-sm-12">
-			                        <input type="text" class="form-control" id="searchInput" style="display: inline;"  placeholder="프로젝트 참여자를 선택해주세요.">
-			                     </div>
-			                  </div>
-								
-						
-						
-						
-							<!-- 글 내용 -->
-							<div class="form-group row">
-								<div class="col-sm-12">
-									<textarea class="form-control" rows="20" name="proContent" placeholder="글을 입력하세요." id="proContent"></textarea>
-								</div>
-							</div>
-								
-						<!-- modal-footer -->
-						<div class="modal-footer justify-content-between">
-							<button type="reset" class="btn btn-warning">초기화</button>
-							<div>
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-								<button type="button" class="btn btn-primary" onclick="writePjt('${root}')">작성 완료</button>
-							</div>
-							</div>
-						</div>
-					
-	</div>
-</div>
-</div>
 
 
 
@@ -262,7 +177,7 @@
        });
 
    </script>
-
+	
 
 
 

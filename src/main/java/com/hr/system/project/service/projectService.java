@@ -9,5 +9,8 @@ public interface projectService {
 	void projectAutocomplete(ModelAndView mav);
 
 	void projectAutocomplete2(ModelAndView mav);
+
+	void projectWriteOk(ModelAndView mav);
+
 	
 }

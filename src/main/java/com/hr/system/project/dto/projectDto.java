@@ -3,10 +3,10 @@ package com.hr.system.project.dto;
 import java.sql.Date;
 
 public class projectDto {
-	private int pjtNo;
+	private int pjt_No;
 	private String name;
-	private Date fromdate;
-	private Date todate;
+	private Date from_date;
+	private Date to_date;
 	private String content;
 	private int state;
 	
@@ -17,20 +17,20 @@ public class projectDto {
 
 	public projectDto(int pjtNo, String name, Date fromdate, Date todate, String content, int state) {
 		super();
-		this.pjtNo = pjtNo;
+		this.pjt_No = pjtNo;
 		this.name = name;
-		this.fromdate = fromdate;
-		this.todate = todate;
+		this.from_date = fromdate;
+		this.to_date = todate;
 		this.content = content;
 		this.state = state;
 	}
 
 	public int getPjtNo() {
-		return pjtNo;
+		return pjt_No;
 	}
 
 	public void setPjtNo(int pjtNo) {
-		this.pjtNo = pjtNo;
+		this.pjt_No = pjtNo;
 	}
 
 	public String getName() {
@@ -42,19 +42,19 @@ public class projectDto {
 	}
 
 	public Date getFromdate() {
-		return fromdate;
+		return from_date;
 	}
 
 	public void setFromdate(Date fromdate) {
-		this.fromdate = fromdate;
+		this.from_date = fromdate;
 	}
 
 	public Date getTodate() {
-		return todate;
+		return to_date;
 	}
 
 	public void setTodate(Date todate) {
-		this.todate = todate;
+		this.to_date = todate;
 	}
 
 	public String getContent() {
@@ -75,7 +75,7 @@ public class projectDto {
 
 	@Override
 	public String toString() {
-		return "projectDto [pjtNo=" + pjtNo + ", name=" + name + ", fromdate=" + fromdate + ", todate=" + todate
+		return "projectDto [pjtNo=" + pjt_No + ", name=" + name + ", fromdate=" + from_date + ", todate=" + to_date
 				+ ", content=" + content + ", state=" + state + "]";
 	}
 	
