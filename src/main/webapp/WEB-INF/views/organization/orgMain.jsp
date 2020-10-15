@@ -326,13 +326,6 @@
 				<form action="" name="createForm" method="post" enctype="multipart/form-data">
 					<!-- modal-body -->
 					<div class="modal-body">
-						<!-- 날짜 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							날짜
-								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
-							</div>
-						</div>
 						<!-- 부서  -->
 						<div class="form-group row">
 							<div class="col-sm-12">
@@ -385,13 +378,6 @@
 				
 					<!-- modal-body -->
 					<div class="modal-body">
-						<!-- 날짜 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							날짜
-								<input type="text" class="form-control" name="date" value="2020-09-15" readonly>
-							</div>
-						</div>
 						<!-- 이름 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
