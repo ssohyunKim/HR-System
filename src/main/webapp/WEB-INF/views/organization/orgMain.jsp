@@ -485,20 +485,17 @@
 				  $("#right-table .g").hide();
 				  $("#right-table .h").hide();
 			   });
-			    
 			   $("#detail2").dblclick(function(){
-					  $("#right-table .dev").hide();
-					  $("#right-table .h").show();
-					  $("#right-table .g").hide();
-				});
-			   
-			   $("#detail3").dblclick(function(){
-				   $("#right-table .dev").hide();
-				   $("#right-table .h").hide();
-				   $("#right-table .g").show();
+				  $("#right-table .dev").hide();
+				  $("#right-table .g").show();
+				  $("#right-table .h").hide();
 			   });
-			   
-			   
+			   $("#detail3").dblclick(function(){
+				  $("#right-table .dev").hide();
+				  $("#right-table .g").hide();
+				  $("#right-table .h").show();
+			   });
+			    
 			});
 		
 		   
