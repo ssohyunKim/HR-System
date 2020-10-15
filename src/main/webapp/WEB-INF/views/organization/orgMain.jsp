@@ -125,30 +125,30 @@
 					 <ul class="tree">
 				        <li>
 				          <input type="checkbox" id="root">
-				          <label for="root"><img src="${root}/resources/img/minus.png">본사</label>
+				          <label for="root" class="show"><img src="${root}/resources/img/minus.png">본사</label>
 				          <ul>
-				              <li><input type="checkbox" id="node1">
+				              <li id="detail1"><input type="checkbox" id="node1">
 				                  <label for="node1" id="dname"><img src="${root}/resources/img/minus.png" id=minus>개발부</label>
 				                  <ul>
-				                      <li>node11</li>
-				                      <li>node12</li>
-				                      <li>node13</li>
+				                      <li>개발1팀</li>
+				                      <li>개발2팀</li>
+				                      <li id="team">컨설팅팀</li>
 				                  </ul>
 				                </li>
-				                <li><input type="checkbox" id="node2">
+				                <li id="detail2"><input type="checkbox" id="node2">
 				                  <label for="node2"><img src="${root}/resources/img/minus.png" id="minus">경영부</label>
 				                  <ul>
-				                      <li>node21</li>
-				                      <li>node22</li>
-				                      <li>node23</li>
+				                      <li>경영지원</li>
+				                      <li>업무관리</li>
+				                      <li>재무관리</li>
 				                  </ul>
 				               </li>
-				              <li><input type="checkbox" id="node3">
+				              <li id="detail3"><input type="checkbox" id="node3">
 				                  <label for="node3"><img src="${root}/resources/img/minus.png" id="minus">인사부</label>
 				                  <ul>
-				                      <li>node31</li>
-				                      <li>node32</li>
-				                      <li>node33</li>
+				                      <li>온라인광고</li>
+				                      <li>오프라인광고</li>
+				                      <li id="hide">인재채용</li>
 				                  </ul>
 				              </li>
 				          </ul>
@@ -160,67 +160,68 @@
 			<table class="table" id="right-table">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">날짜</th>
 								<th scope="col">이름</th>
-								<th scope="col">발령구분</th>
-								<th scope="col">발령내용</th>
+								<th scope="col">부서</th>
+								<th scope="col">직급</th>
+								<th scope="col">사번</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr data-toggle="modal" data-target="#click">
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>직급 변경</td>
-								<td>임명/사원</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>최지훈</td>
-								<td>직급 변경</td>
-								<td>임명/부장</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>홍지연</td>
-								<td>직책 변경</td>
-								<td>임명/사원</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>진은지</td>
-								<td>직책 변경</td>
-								<td>해제</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>김지원</td>
-								<td>고용형태 변경</td>
-								<td>해제</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
-								<td>은지수</td>
-								<td>부서 이동</td>
-								<td>해제</td>
-							</tr>
-							<tr>
-								<td>2020-01-01</td>
+							<tr class="dev">
 								<td>김영태</td>
-								<td>직급 변경</td>
-								<td>임명/사원</td>
+								<td>개발</td>
+								<td>팀장</td>
+								<td>11-5211</td>
 							</tr>
-							<tr>
-								<td>2020-01-01</td>
+							<tr class="dev">
+								<td>진은지</td>
+								<td>개발</td>
+								<td>대리</td>
+								<td>17-3695</td>
+							</tr>
+							<tr class="dev">
+								<td>김민희</td>
+								<td>개발</td>
+								<td>사원</td>
+								<td>20-7784</td>
+							</tr>
+							<tr class="g">
 								<td>김영수</td>
-								<td>직급 변경</td>
-								<td>해제</td>
+								<td>경영</td>
+								<td>팀장</td>
+								<td>09-7412</td>
 							</tr>
-							<tr>
-								<td>2020-01-01</td>
+							<tr class="g">
+								<td>김지원</td>
+								<td>경영</td>
+								<td>대리</td>
+								<td>16-7541</td>
+							</tr>
+							<tr class="g">
+								<td>최지훈</td>
+								<td>경영</td>
+								<td>사원</td>
+								<td>20-5685</td>
+							</tr>
+							<tr class="h">
 								<td>이지원</td>
-								<td>직급 변경</td>
-								<td>임명/사원</td>
+								<td>인사 </td>
+								<td>팀장</td>
+								<td>07-1578</td>
+							</tr>
+							<tr class="h">
+								<td>홍지연</td>
+								<td>인사</td>
+								<td>사원</td>
+								<td>19-8458</td>
+							</tr>
+							<tr class="h">
+								<td>은지수</td>
+								<td>인사</td>
+								<td>대리</td>
+								<td>16-4451</td>
 							</tr>
 						</tbody>
 					</table>
@@ -241,7 +242,7 @@
 					</button>
 				</div>
 
-				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+				
 					<!-- modal-body -->
 					<div class="modal-body">
 					
@@ -264,9 +265,9 @@
 							<div class="col-sm-12">
 							소속부서
 			                    <select name="category1" class="form-control">
+								     <option value="개발부">개발부</option>
 								    <option value="경영부">경영부</option>
-								    <option value="회계부">회계부</option>
-								    <option value="개발부">개발부</option>
+								    <option value="인사부">인사부</option>
 								</select>
 							</div>
 						</div>
@@ -301,7 +302,6 @@
 							<button type="submit" class="btn btn-primary">확인</button>
 						</div>
 					</div>
-				</form>
 			</div>
 		</div>
 	</div>
@@ -360,8 +360,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="button" class="btn btn-dark" id="btnClose">확인</button>
-							
+							<button type="button" class="btn btn-dark" id="btnClose">확인</button> 
 						</div>
 					</div>
 				</form>
@@ -383,7 +382,7 @@
 					</button>
 				</div>
 
-				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+				
 					<!-- modal-body -->
 					<div class="modal-body">
 						<!-- 날짜 -->
@@ -397,17 +396,17 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							  이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요." id="ename">
 							</div>
 						</div>
 						<!-- 부서  -->
 						<div class="form-group row">
 							<div class="col-sm-12">
 							소속부서
-			                    <select name="category1" class="form-control">
-								    <option value="경영부">경영부</option>
-								    <option value="회계부">회계부</option>
+			                    <select name="category1" id="deptMod" class="form-control">
 								    <option value="개발부">개발부</option>
+								    <option value="경영부">경영부</option>
+								    <option value="인사부">인사부</option>
 								</select>
 							</div>
 						</div>
@@ -416,10 +415,9 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  onclick="button_event('${root}','${salesDto.sales_number}')" >확인</button>
+							<button type="submit" class="btn btn-primary"  id="enameMod" >확인</button>
 						</div>
 					</div>
-				</form>
 			</div>
 		</div>
 	</div>
@@ -439,13 +437,15 @@
 	
 	
 	<script type="text/javascript">
-/* 		$(document).ready(function() {
-		   $("#node1").click (function() {
-			   document.getElementById("minus").src="${root}/resources/img/plus.png";
-		   });
-		}); */
+ 	
 		
 		$(document).ready(function() {
+			 var eName = $('li[id="team"]').text();
+			 var deptName = $('label[id="dname"]').text();
+			 
+			  $("#team").hide();
+			  $("#hide").hide();
+			
 			  $("#line").click(function(){
 			        $("#tableModal").modal();
 			    });
@@ -453,17 +453,63 @@
 			
 			   $("#btnDel").click (function() {
 				   if(confirm("정말삭제하시겠습니까?")==true){
+					   $("#hide").hide();
 					   alert("삭제되었습니다.");
+					   
 				   }
 			   });
 			   
 			   $("#dname").dblclick (function() {
-				   var deptName = $('label[id="dname"]').text();
 				   $('select[class="form-control"]').val(''+deptName+'').attr("selected","selected");
+			   });
+			   
+			   
+			   $("#team").dblclick (function() {
+			       $("#ename").val(''+eName+'').attr("placeholder", eName);  
+				   var modName = $("#ename").text();
+				   
+			   });
+			   
+			   $("#enameMod").click(function(){
+				  $("#modModal").modal('hide'); 
+				  $('li[id="team"]').text("인재채용");
+				  eName = "인재채용";
+				  
+				  var select = $('select[id="deptMod"]').val();
+				  
+				  if(select == "인사부"){
+					  $("#team").hide();
+					  $("#hide").show();
+				  }
+				  
 			   });
 			   
 			   $("#btnClose").click(function(){
 				  $("#addModal").modal('hide'); 
+				  $("#team").show();
+			   });
+			    
+			   $(".show").dblclick(function(){
+				  $("#right-table .dev").show();
+				  $("#right-table .g").show();
+				  $("#right-table .h").show();
+			   });
+			   $("#detail1").dblclick(function(){
+				  $("#right-table .dev").show();
+				  $("#right-table .g").hide();
+				  $("#right-table .h").hide();
+			   });
+			    
+			   $("#detail2").dblclick(function(){
+					  $("#right-table .dev").hide();
+					  $("#right-table .h").show();
+					  $("#right-table .g").hide();
+				});
+			   
+			   $("#detail3").dblclick(function(){
+				   $("#right-table .dev").hide();
+				   $("#right-table .h").hide();
+				   $("#right-table .g").show();
 			   });
 			   
 			   
