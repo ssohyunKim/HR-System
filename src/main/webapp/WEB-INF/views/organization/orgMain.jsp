@@ -331,9 +331,9 @@
 							<div class="col-sm-12">
 							소속부서
 			                    <select name="category1" class="form-control">
+								     <option value="개발부">개발부</option>
 								    <option value="경영부">경영부</option>
-								    <option value="회계부">회계부</option>
-								    <option value="개발부">개발부</option>
+								    <option value="인사부">인사부</option>
 								</select>
 							</div>
 						</div>
