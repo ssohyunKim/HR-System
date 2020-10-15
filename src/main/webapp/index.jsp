@@ -37,24 +37,21 @@
 				<p>인사팀</p>
 			</div>
 			<ul class="list-unstyled">
-				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
-			</ul>
-			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
+				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
 				<li><a href="${root}/assess/assessMain.do">평가관리</a></li>
-				<li><a href="#">복리후생</a></li>
+				<li><a href="${root}/commute/commuteMain.do">근태관리</a></li>
 				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
 				<li><a href="${root}/project/project.do">프로젝트</a></li>
-				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
+				<!-- <li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li><a href="#">개인별 업무실적</a></li>
 						<li><a href="#">분기별 실적통계</a></li>
-					</ul></li>
+					</ul></li> -->
 			</ul>
 
 			<ul class="list-unstyled CTAs">

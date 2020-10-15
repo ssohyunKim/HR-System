@@ -30,6 +30,32 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 
 </head>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#sidebarCollapse').on('click', function() {
+			$('#sidebar').toggleClass('active');
+			$(this).toggleClass('on');
+		});
+		
+		$('#fromDate').datetimepicker({
+			format: 'L'	
+		});
+
+		$('#toDate').datetimepicker({
+			format: 'L', 
+			useCurrent: false
+		});
+		
+		$("#fromDate").on("change.datetimepicker", function (e) { 
+			$('#toDate').datetimepicker('minDate', e.date); 
+		}); 
+		
+		$("#toDate").on("change.datetimepicker", function (e) {
+			$('#fromDate').datetimepicker('maxDate', e.date); 
+		});
+
+	});
+</script>	
 <body>
 <div class="wrapper">
 		<!-- Sidebar  -->
@@ -40,28 +66,26 @@
 					</span>
 				</div>
 
-				<h5>OOO 님 환영합니다!</h5>
+				<h5>관리자 님 환영합니다!</h5>
 				<p>인사팀</p>
 			</div>
 
 			<ul class="list-unstyled">
-				<li><a href="#">마이페이지</a></li>
-				<li><a href="#">복리후생</a></li>
-			</ul>
-			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
-				<li><a href="#">조직관리</a></li>
+				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
+				<li><a href="${root}/assess/assessMain.do">평가관리</a></li>
+				<li><a href="${root}/commute/commuteMain.do">근태관리</a></li>
+				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트</a></li>
-				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
+				<li><a href="${root}/project/project.do">프로젝트</a></li>
+				<!-- <li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li><a href="#">개인별 업무실적</a></li>
 						<li><a href="#">분기별 실적통계</a></li>
-					</ul></li>
+					</ul></li> -->
 			</ul>
 
 			<ul class="list-unstyled CTAs">
@@ -169,86 +193,98 @@
 						<tbody>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
+								<td>2020-10-10</td>
 								<td>김민희</td>
 								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
 								<td>449901-01-123456</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<!-- <th scope="row"></th> -->
+								<td>2020-10-11</td>
+								<td>최지훈</td>
+								<td>사원</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123444</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
+								<td>2020-10-15</td>
+								<td>홍지연</td>
 								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123555</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>2020-10-15</td>
+								<td>진은지</td>
+								<td>대리</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123451</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>2020-10-15</td>
+								<td>김지원</td>
+								<td>대리</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123452</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>2020-10-15</td>
+								<td>은지수</td>
+								<td>대리</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123453</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>2020-10-15</td>
+								<td>김영태</td>
+								<td>팀장</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123454</td>
 								<td>O</td>
 							</tr>
 							<tr>
 								<!-- <th scope="row"></th> -->
-								<td>2020-01-01</td>
-								<td>김민희</td>
-								<td>사원</td>
-								<td>300</td>
-								<td>200</td>
-								<td>79</td>
-								<td>279</td>
-								<td>449901-01-123456</td>
+								<td>2020-10-15</td>
+								<td>이지원</td>
+								<td>팀장</td>
+								<td>210</td>
+								<td>208</td>
+								<td>25,770</td>
+								<td>1,967,110</td>
+								<td>449901-01-123457</td>
 								<td>O</td>
 							</tr>
 						</tbody>
@@ -361,32 +397,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-		$(document).ready(function() {
-			$('#sidebarCollapse').on('click', function() {
-				$('#sidebar').toggleClass('active');
-				$(this).toggleClass('on');
-			});
-			
-			$('#fromDate').datetimepicker({
-				format: 'L'	
-			});
-
-			$('#toDate').datetimepicker({
-				format: 'L', 
-				useCurrent: false
-			});
-			
-			$("#fromDate").on("change.datetimepicker", function (e) { 
-				$('#toDate').datetimepicker('minDate', e.date); 
-			}); 
-			
-			$("#toDate").on("change.datetimepicker", function (e) {
-				$('#fromDate').datetimepicker('maxDate', e.date); 
-			});
-
-		});
-	</script>
 </body>
 </html>

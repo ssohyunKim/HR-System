@@ -31,6 +31,74 @@
 
 </head>
 <body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#sidebarCollapse').on('click', function() {
+			$('#sidebar').toggleClass('active');
+			$(this).toggleClass('on');
+		});
+		
+		$('#fromDate').datetimepicker({
+			format: 'L'
+		});
+
+		$('#toDate').datetimepicker({
+			format: 'L', 
+			useCurrent: false
+		});
+		
+		$("#fromDate").on("change.datetimepicker", function (e) { 
+			$('#toDate').datetimepicker('minDate', e.date); 
+		}); 
+		
+		$("#toDate").on("change.datetimepicker", function (e) {
+			$('#fromDate').datetimepicker('maxDate', e.date); 
+		});
+		
+	});
+	function excelDownload(table){
+		 
+		var tab_text = '<html xmlns:x="urn:schemas-microsoft-com:office:excel">';
+			tab_text += '<head><meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+			tab_text += '<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>'
+			tab_text += '<x:Name>Sheet</x:Name>';
+			tab_text += '<x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>';
+			tab_text += '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+			tab_text += "<table border='1px'>";
+		var exportTable = $('#' + table).clone();
+		exportTable.find('input').each(function(index, elem) {
+			$(elem).remove();
+		});
+			tab_text += exportTable.html();
+			tab_text += '</table></body></html>';
+		var data_type = 'data:application/vnd.ms-excel';
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE ");
+		var fileName = '인사테이블_' + $('#fromDate').find("input").val() + '_'
+		+ $('#toDate').find("input").val() + '.xls';
+		
+		//IE일 경우
+		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+				if (window.navigator.msSaveBlob) {
+					var blob = new Blob([ tab_text ], {
+						type : "application/csv;charset=utf-8;"
+					});
+					navigator.msSaveBlob(blob, fileName);
+				}
+		} else {
+			var blob2 = new Blob([ tab_text ], {
+				type : "application/csv;charset=utf-8;"
+			});
+			var filename = fileName;
+			var elem = window.document.createElement('a');
+			elem.href = window.URL.createObjectURL(blob2);
+			elem.download = filename;
+			document.body.appendChild(elem);
+			elem.click();
+			document.body.removeChild(elem);
+		}
+	}
+</script>
 <div class="wrapper">
 		<!-- Sidebar  -->
 		<nav id="sidebar" class="">
@@ -45,23 +113,21 @@
 			</div>
 
 			<ul class="list-unstyled">
-				<li><a href="#">마이페이지</a></li>
-				<li><a href="#">복리후생</a></li>
-			</ul>
-			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
 				<li><a href="${root}/manage/salary.do">급여관리</a></li>
-				<li><a href="#">평가관리</a></li>
-				<li><a href="#">조직관리</a></li>
+				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
+				<li><a href="${root}/assess/assessMain.do">평가관리</a></li>
+				<li><a href="${root}/commute/commuteMain.do">근태관리</a></li>
+				<li><a href="${root}/organization/main.do">조직관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
-				<li><a href="#">프로젝트</a></li>
-				<li class=""><a href="#homeSubmenu" data-toggle="collapse"
+				<li><a href="${root}/project/project.do">프로젝트</a></li>
+				<!-- <li class=""><a href="#homeSubmenu" data-toggle="collapse"
 					aria-expanded="false" class="dropdown-toggle">업무실적산정</a>
 					<ul class="collapse list-unstyled" id="homeSubmenu">
 						<li><a href="#">개인별 업무실적</a></li>
 						<li><a href="#">분기별 실적통계</a></li>
-					</ul></li>
+					</ul></li> -->
 			</ul>
 
 			<ul class="list-unstyled CTAs">
@@ -143,14 +209,14 @@
 								
 								<div class="form-group" style="float:right; padding-left:150px;">
 									<button class="btn btn-primary my-2 my-sm-2" type="button" data-toggle="modal" data-target="#WriteModal">등록</button>&nbsp;
-									<button class="btn btn-dark my-2 my-sm-0" type="submit">다운로드</button>
+									<button class="btn btn-dark my-2 my-sm-0" type="button" onclick="excelDownload('resourceList')">다운로드</button>
 								</div>
 							</form>
 						</div>
 					</nav>
 				</div>
 				<div>
-					<table class="table">
+					<table id="resourceList" class="table">
 						<thead class="thead-light">
 							<tr>
 								<th scope="col">날짜</th>
@@ -164,14 +230,14 @@
 								<!-- <th scope="row"></th> -->
 								<td>2020-01-01</td>
 								<td>김민희</td>
-								<td>직급 변경</td>
+								<td>직책 변경</td>
 								<td>임명/사원</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>최지훈</td>
-								<td>직급 변경</td>
-								<td>임명/부장</td>
+								<td>직책 변경</td>
+								<td>임명/사원</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
@@ -182,38 +248,38 @@
 							<tr>
 								<td>2020-01-01</td>
 								<td>진은지</td>
-								<td>직책 변경</td>
-								<td>해제</td>
+								<td>직위 변경</td>
+								<td>임명/선임</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>김지원</td>
-								<td>고용형태 변경</td>
-								<td>해제</td>
+								<td>직위 변경</td>
+								<td>임명/대리</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>은지수</td>
 								<td>부서 이동</td>
-								<td>해제</td>
+								<td>인사부서</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>김영태</td>
-								<td>직급 변경</td>
-								<td>임명/사원</td>
+								<td>직위 변경</td>
+								<td>임명/선임</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>김영수</td>
-								<td>직급 변경</td>
-								<td>해제</td>
+								<td>직위 변경</td>
+								<td>경영/수석</td>
 							</tr>
 							<tr>
 								<td>2020-01-01</td>
 								<td>이지원</td>
-								<td>직급 변경</td>
-								<td>임명/사원</td>
+								<td>직위 변경</td>
+								<td>임명/선임</td>
 							</tr>
 						</tbody>
 					</table>
@@ -260,7 +326,7 @@
 			                    <select name="category" class="form-control">
 								    <option value="직급 변경">직급 변경</option>
 								    <option value="부서 이동">부서 이동</option>
-								    <option value="고용형태 변경">고용형태 변경</option>
+								    <option value="직책 변경">직책 변경</option>
 								    <option value="기타">기타</option>
 								</select>
 							</div>
@@ -299,32 +365,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-		$(document).ready(function() {
-			$('#sidebarCollapse').on('click', function() {
-				$('#sidebar').toggleClass('active');
-				$(this).toggleClass('on');
-			});
-			
-			$('#fromDate').datetimepicker({
-				format: 'L'	
-			});
-
-			$('#toDate').datetimepicker({
-				format: 'L', 
-				useCurrent: false
-			});
-			
-			$("#fromDate").on("change.datetimepicker", function (e) { 
-				$('#toDate').datetimepicker('minDate', e.date); 
-			}); 
-			
-			$("#toDate").on("change.datetimepicker", function (e) {
-				$('#fromDate').datetimepicker('maxDate', e.date); 
-			});
-
-		});
-	</script>
 </body>
 </html>
