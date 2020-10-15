@@ -18,4 +18,18 @@ public class CommuteController {
 		mav.setViewName("commute/commuteMain");
 		return mav;		
 	}
+	
+	@RequestMapping(value = "/commute/commuteMain_add")
+	public String add(HttpServletRequest request, HttpServletResponse response) {
+		return "/commute/commuteMain_add";		
+	}
+	
+	@RequestMapping(value = "/commute/commuteMain_search")
+	public String add1(HttpServletRequest request, HttpServletResponse response) {
+		return "/commute/commuteMain_search";		
+	}
+	@RequestMapping(value = "/commute/commuteMain_update")
+	public String add2(HttpServletRequest request, HttpServletResponse response) {
+		return "/commute/commuteMain_update";		
+	}
 }

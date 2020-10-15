@@ -18,4 +18,24 @@ public class AssessController {
 		mav.setViewName("assess/assessMain");
 		return mav;		
 	}
+	
+	@RequestMapping(value = "/assess/assessMain_add")
+	public String add(HttpServletRequest request, HttpServletResponse response) {
+		return "assess/assessMain_add";		
+	}
+	
+	@RequestMapping(value = "/assess/assessMain_search")
+	public String add1(HttpServletRequest request, HttpServletResponse response) {
+		return "assess/assessMain_search";		
+	}
+	
+	@RequestMapping(value = "/assess/assessMain_update")
+	public String add2(HttpServletRequest request, HttpServletResponse response) {
+		return "assess/assessMain_update";		
+	}
+	
+	@RequestMapping(value = "/assess/assessMain_delete")
+	public String add3(HttpServletRequest request, HttpServletResponse response) {
+		return "assess/assessMain_delete";		
+	}
 }

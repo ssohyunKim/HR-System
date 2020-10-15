@@ -28,20 +28,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
-	<script type="text/javascript">
-		$(document).ready(function() {
-		    $("#btnClick").click(function(){
-		        $("#click").modal('hide'); 
-		      });
-		});
-		
-		$(document).ready(function() {
-			$("#btnClick").click(function(){
-				
-			});
-		});
-
-</script>
+	
 </head>
 
 
@@ -55,13 +42,13 @@
 					</span>
 				</div>
 
-				<h5>OOO 님 환영합니다!</h5>
+				<h5>관리자님 환영합니다!</h5>
 				<p>인사팀</p>
 			</div>
 
 			<ul class="list-unstyled">
 				<li><a href="#">마이페이지</a></li>
-				<li><a href="${root}/commute/commuteMain.do">복리후생</a></li>
+				<li><a href="${root}/commute/commuteMain.do">근태관리</a></li>
 			</ul>
 			<ul class="list-unstyled">
 				<li><a href="${root}/manage/resource.do">인사관리</a></li>
@@ -105,7 +92,7 @@
 									<select class="custom-select" id="inputGroupSelect01" >
 										<option selected>전체</option>
 										<option value="1">경영팀</option>
-										<option value="2">회계팀</option>
+										<option value="2">인사팀</option>
 										<option value="3">개발팀</option>
 									</select>
 									&nbsp;
@@ -119,7 +106,7 @@
 										<option value="3">대리</option>
 										<option value="4">과장</option>
 										<option value="5">차장</option>
-										<option value="6">부장</option>
+										<option value="6">팀장</option>
 									</select>
 								</div>
 								&nbsp;
@@ -128,7 +115,7 @@
 										<div class="input-group date" id="fromDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate" value="09/15/2020">
+												data-target="#fromDate" >
 											<div class="input-group-append" data-target="#fromDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -143,7 +130,7 @@
 										<div class="input-group date" id="toDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#toDate" value="09/15/2020">
+												data-target="#toDate" >
 											<div class="input-group-append" data-target="#toDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -159,13 +146,13 @@
 								</div>
 								
 								<div class="form-group" style="padding-left:20px; padding-right:20px;">
-									<input class="form-control mr-sm-2" type="search" placeholder="사원코드" aria-label="Search">
+									
 									<button class="btn btn-outline-secondary my-2 my-sm-0"
 										type="submit">검색</button>
 								</div>
 								
-								<div class="form-group" style="float:right; padding-left:100px;">
-									
+								<div class="form-group" style="float:right; padding-left:300px;">
+									<button class="btn btn-primary my-2 my-sm-2" type="button" data-toggle="modal" data-target="#WriteModal">등록</button>&nbsp;
 									<button class="btn btn-dark my-2 my-sm-0" type="submit">다운로드</button>
 								</div>
 							</form>
@@ -188,102 +175,92 @@
 						<tbody>
 							<tr data-toggle="modal" data-target="#click">
 								<!-- <th scope="row"></th> -->
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
+								<td>최지훈</td>
+								<td>20-5685</td>
+								<td>2020-10-14</td>
 								<td>09:12</td>
 								<td>18:20</td>
 								<td>지각</td>
 								<td>개인사정</td>
 							</tr>
 							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
+								<td>홍지연 </td>
+								<td>19-8458</td>
+								<td>2020-10-15</td>
+								<td>08:42</td>
+								<td>18:00</td>
+								<td>정상출근</td>
+								<td></td>
+							</tr>
+								<tr>
+								<td>진은지 </td>
+								<td>17-3695</td>
+								<td>2020-10-15</td>
+								<td>08:55</td>
+								<td>18:00</td>
+								<td>정상출근</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>김지원 </td>
+								<td>16-7541</td>
+								<td>2020-10-14</td>
+								<td>09:20</td>
+								<td>18:40</td>
 								<td>지각</td>
 								<td>개인사정</td>
 							</tr>
 							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
+								<td>은지수</td>
+								<td>16-4451</td>
+								<td>2020-10-15</td>
+								<td>08:45</td>
+								<td>18:10</td>
+								<td>정상출근</td>
+								<td></td>
 							</tr>
 							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
+								<td>김영태</td>
+								<td>11-5211</td>
+								<td>2020-10-14</td>
+								<td>08:32</td>
+								<td>17:55</td>
+								<td>정상출근</td>
+								<td></td>
 							</tr>
 							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
+								<td>김영수</td>
+								<td>09-7412</td>
+								<td>2020-10-15</td>
+								<td>08:36</td>
+								<td>18:06</td>
+								<td>정상출근</td>
+								<td></td>
 							</tr>
 							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
+								<td>이지원</td>
+								<td>07-1578</td>
+								<td>2020-10-14</td>
+								<td>08:49</td>
+								<td>12:10</td>
+								<td>조퇴</td>
 								<td>개인사정</td>
 							</tr>
-							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
-							</tr>
-							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
-							</tr>
-							<tr>
-								<td>김경용</td>
-								<td>13-4515</td>
-								<td>2020-01-01</td>
-								<td>09:12</td>
-								<td>18:20</td>
-								<td>지각</td>
-								<td>개인사정</td>
-							</tr>
+							
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
-		<!-- 수정 Model -->
-	<div class="modal fade" id="click" tabindex="-1" role="dialog">
+			<!-- 등록 Model -->
+	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
-				<!-- modal-header -->
+						<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">근퇴 수정하기</h5>
+					<h5 class="m-0 text-primary p-2">근태 등록하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -301,7 +278,7 @@
 										<div class="input-group date" id="Date"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#Date" value="09/15/2020">
+												data-target="#Date" >
 											<div class="input-group-append" data-target="#Date"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -316,7 +293,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요." readonly>
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요." >
 							</div>
 						</div>
 						
@@ -324,7 +301,7 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							사번
-								<input type="text" class="form-control" name="number" placeholder="사번을 입력하세요." readonly>
+								<input type="text" class="form-control" name="number" placeholder="사번을 입력하세요." >
 							</div>
 						</div>
 						
@@ -333,8 +310,8 @@
 							<div class="col-sm-12">
 							<div>출퇴근시간</div>
 								<form name="해당 폼의 이름" action="값을 보낼 주소" method="post" style="padding-left:15px;">
-        							<input type='time' name='fromSul' value='02:04'/> ~
-        							<input type='time' name='toSul' value='14:44'/>
+        							<input type='time' name='fromSul' /> ~
+        							<input type='time' name='toSul' />
    								</form>
 							</div>
 						</div>
@@ -365,7 +342,104 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary" id="btnClick">수정완료</button>
+							<button type="submit" class="btn btn-primary"  id="btnClick" >확인</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+		<!-- 수정 Model -->
+	<div class="modal fade" id="click" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg mt-5" role="document">
+			<div class="modal-content">
+
+				<!-- modal-header -->
+				<div class="modal-header">
+					<h5 class="m-0 text-primary p-2">근태 수정하기</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form action="" name="createForm" method="post" enctype="multipart/form-data">
+					<!-- modal-body -->
+					<div class="modal-body">
+						<!-- 날짜 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							날짜
+									<div class="form-group">
+										<div class="input-group date" id="Date"
+											data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input"
+												data-target="#Date" value="10/15/2020">
+											<div class="input-group-append" data-target="#Date"
+												data-toggle="datetimepicker">
+												<div class="input-group-text">
+													<i class="fa fa-calendar"></i>
+												</div>
+											</div>
+										</div>
+									</div> 
+							</div>
+						</div>
+						<!-- 이름 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							이름
+								<input type="text" class="form-control" name="name" placeholder="김민희" >
+							</div>
+						</div>
+						
+						<!-- 사번 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							사번
+								<input type="text" class="form-control" name="number" placeholder="20-7784" >
+							</div>
+						</div>
+						
+						<!-- 출근시간 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							<div>출퇴근시간</div>
+								<form name="해당 폼의 이름" action="값을 보낼 주소" method="post" style="padding-left:15px;">
+        							<input type='time' name='fromSul' value='08:52'/> ~
+        							<input type='time' name='toSul' value='12:10'/>
+   								</form>
+							</div>
+						</div>
+			
+						<!-- 지각여부 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								근태
+			                    <select name="category" class="form-control">
+								    <option value="직급 변경">조퇴</option>
+								    <option value="부서 이동">지각</option>
+								    <option value="직급 변경">휴가</option>
+								    <option value="부서 이동">정상출근</option>
+								</select>
+							</div>
+						</div>
+						
+						<!-- 비고 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							비고
+								<textarea class="form-control" rows="3" name="cusContent" placeholder="글을 입력하세요."></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- modal-footer -->
+					<div class="modal-footer justify-content-between">
+						<button type="reset" class="btn btn-warning">초기화</button>
+						<div>
+							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
+							<button type="submit" class="btn btn-primary" id="btnClik">수정완료</button>
 						</div>
 					</div>
 				</form>
@@ -406,6 +480,11 @@
 			$("#toDate").on("change.datetimepicker", function (e) {
 				$('#fromDate').datetimepicker('maxDate', e.date); 
 			});
+			$("#btnClick").click(function(){
+				$('#WriteModal').modal("hide");
+				alert("등록되었습니다.");
+				location.href="${root}/commute/commuteMain_add";
+			})
 
 		});
 	</script>
