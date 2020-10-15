@@ -21,7 +21,7 @@ import com.hr.system.project.dto.projectDto;
 import com.hr.system.project.service.projectService;
 
 @Controller
-public class projectController {
+public class ProjectController {
 	@Autowired
 	private projectService projectservice;
 	

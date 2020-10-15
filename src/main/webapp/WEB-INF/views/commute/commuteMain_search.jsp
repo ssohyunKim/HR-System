@@ -28,7 +28,6 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
-	
 
 </head>
 
@@ -91,9 +90,9 @@
 										<label class="input-group-text" for="inputGroupSelect01">부서선택</label>
 									</div>
 									<select class="custom-select" id="inputGroupSelect01" >
-										<option selected>전체</option>
-										<option value="1">인사팀</option>
-										<option value="2">경영팀</option>
+										<option selected>개발팀</option>
+										<option value="1">경영팀</option>
+										<option value="2">인사팀</option>
 										<option value="3">개발팀</option>
 									</select>
 									&nbsp;
@@ -116,7 +115,7 @@
 										<div class="input-group date" id="fromDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#fromDate">
+												data-target="#fromDate" value="10/01/2020">
 											<div class="input-group-append" data-target="#fromDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -125,13 +124,13 @@
 											</div>
 										</div>
 									</div> 
-									<div style = "padding-left:20px; padding-right:20px"> ~
+									<div style = "padding-left:10px; padding-right:10px"> ~
 									</div> 
 									<div class="form-group">
 										<div class="input-group date" id="toDate"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#toDate" >
+												data-target="#toDate" value="10/31/2020">
 											<div class="input-group-append" data-target="#toDate"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -142,13 +141,17 @@
 									</div>
 								</div>
 								&nbsp;
-								<div class="form-group" style="padding-left:50px; padding-right:50px;">
-									<input class="form-control mr-sm-2" type="search" placeholder="사원명" aria-label="Search">
+								<div class="form-group" style="padding-left:20px;">
+									<input class="form-control mr-sm-2" type="search" placeholder="김민희" aria-label="Search">
+								</div>
+								
+								<div class="form-group" style="padding-left:20px; padding-right:20px;">
+								
 									<button class="btn btn-outline-secondary my-2 my-sm-0"
 										type="submit">검색</button>
 								</div>
 								
-								<div class="form-group" style="float:right; padding-left:150px;">
+								<div class="form-group" style="float:right; padding-left:300px;">
 									<button class="btn btn-primary my-2 my-sm-2" type="button" data-toggle="modal" data-target="#WriteModal">등록</button>&nbsp;
 									<button class="btn btn-dark my-2 my-sm-0" type="submit">다운로드</button>
 								</div>
@@ -160,105 +163,42 @@
 					<table class="table">
 						<thead class="thead-light">
 							<tr>
-								<th scope="col">날짜</th>
-								<th scope="col">부서</th>
 								<th scope="col">이름</th>
-								<th scope="col">직급</th>
-								<th scope="col">직원코드</th>
-								<th scope="col">평가</th>
+								<th scope="col">사번</th>
+								<th scope="col">날짜</th>
+								<th scope="col">출근시간</th>
+								<th scope="col">퇴근시간</th>
+								<th scope="col">근태</th>
+								<th scope="col">비고</th>
 							</tr>
 						</thead>
 						<tbody>
-								<tr data-toggle="modal" data-target="#click">
+							<tr data-toggle="modal" data-target="#updateModal">
 								<!-- <th scope="row"></th> -->
-								<td>2020-10-15</td>
-								<td>개발팀</td>
 								<td>김민희</td>
-								<td>사원</td>
 								<td>20-7784</td>
-								<td>A0</td>
-								</tr>
-								
-							<tr>
 								<td>2020-10-15</td>
-								<td>경영팀</td>
-								<td>최지훈</td>
-								<td>사원</td>
-								<td>20-5685</td>
-								<td>B0</td>
+								<td>08:52</td>
+								<td>12:10</td>
+								<td>조퇴</td>
+								<td>건강검진</td>
 							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>인사팀</td>
-								<td>홍지연</td>
-								<td>사원</td>
-								<td>19-8458</td>
-								<td>C+</td>
-							</tr>
-								<tr>
-								<td>2020-10-15</td>
-								<td>개발팀</td>
-								<td>진은지</td>
-								<td>대리</td>
-								<td>17-3695</td>
-								<td>A0</td>
-							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>경영팀</td>
-								<td>김지원</td>
-								<td>대리</td>
-								<td>16-7541</td>
-								<td>A0</td>
-							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>인사팀</td>
-								<td>은지수</td>
-								<td>대리</td>
-								<td>16-4451</td>
-								<td>B+</td>
-							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>개발팀</td>
-								<td>김영태</td>
-								<td>팀장</td>
-								<td>11-5211</td>
-								<td>A+</td>
-							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>경영팀</td>
-								<td>김영태</td>
-								<td>팀장</td>
-								<td>09-7412</td>
-								<td>A0</td>
-							</tr>
-							<tr>
-								<td>2020-10-15</td>
-								<td>인사팀</td>
-								<td>이지원</td>
-								<td>팀장</td>
-								<td>07-1578</td>
-								<td>B+</td>
-							</tr>
-				
+	
+							
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-			<!-- 클릭 Model -->
-	<div class="modal fade" id="click" tabindex="-1" role="dialog">
+			<!-- 등록 Model -->
+	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
-				<!-- modal-header -->
+						<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">평가 수정하기</h5>
+					<h5 class="m-0 text-primary p-2">근태 등록하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -276,7 +216,7 @@
 										<div class="input-group date" id="Date"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#Date" >
+												data-target="#Date" value="09/15/2020">
 											<div class="input-group-append" data-target="#Date"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -291,69 +231,56 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요." >
 							</div>
 						</div>
-						<!-- 부서  -->
+						
+						<!-- 사번 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							부서
-			                    <select name="category1" class="form-control">
-								    <option value="경영팀">경영팀</option>
-								    <option value="회계팀">회계팀</option>
-								    <option value="개발팀">개발팀</option>
+							사번
+								<input type="text" class="form-control" name="number" placeholder="사번을 입력하세요." >
+							</div>
+						</div>
+						
+						<!-- 출근시간 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							<div>출퇴근시간</div>
+								<form name="해당 폼의 이름" action="값을 보낼 주소" method="post" style="padding-left:15px;">
+        							<input type='time' name='fromSul' value='02:04'/> ~
+        							<input type='time' name='toSul' value='14:44'/>
+   								</form>
+							</div>
+						</div>
+			
+						<!-- 지각여부 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								근태
+			                    <select name="category" class="form-control">
+								    <option value="직급 변경">정상출근</option>
+								    <option value="부서 이동">지각</option>
+								    <option value="직급 변경">휴가</option>
+								    <option value="부서 이동">조퇴</option>
 								</select>
 							</div>
 						</div>
 						
-						<!-- 직급  -->
+						<!-- 비고 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							직급
-			                    <select name="category2" class="form-control">
-								    <option value="1">사원</option>
-								    <option value="2">주임</option>
-								    <option value="3">대리</option>
-								   	<option value="4">과장</option>
-								    <option value="5">차장</option>
-								    <option value="6">부장</option>
-								</select>
+							비고
+								<textarea class="form-control" rows="3" name="cusContent" placeholder="글을 입력하세요."></textarea>
 							</div>
 						</div>
-						
-						<!--직원코드 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직원코드
-								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
-							</div>
-						</div>
-						
-						<!-- 평가  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							평가
-			                    <select name="category2" class="form-control">
-								    <option value="1">A+</option>
-								    <option value="2">A0</option>
-								    <option value="3">B+</option>
-								   	<option value="4">B0</option>
-								    <option value="5">C+</option>
-								    <option value="6">C0</option>
-								    <option value="7">D+</option>
-								    <option value="8">D0</option>
-								</select>
-							</div>
-						</div>
-						
 					</div>
 					<!-- modal-footer -->
 					<div class="modal-footer justify-content-between">
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-danger"  id="btnClick" >삭제</button>
-							<button type="submit" class="btn btn-primary"  id="btnClick" >수정완료</button>
+							<button type="submit" class="btn btn-primary"  id="btnClick" >확인</button>
 						</div>
 					</div>
 				</form>
@@ -361,16 +288,14 @@
 		</div>
 	</div>
 	
-	
-	
-		<!-- 등록 Model -->
-	<div class="modal fade" id="WriteModal" tabindex="-1" role="dialog">
+		<!-- 수정 Model -->
+	<div class="modal fade" id="updateModal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg mt-5" role="document">
 			<div class="modal-content">
 
 				<!-- modal-header -->
 				<div class="modal-header">
-					<h5 class="m-0 text-primary p-2">평가 등록하기</h5>
+					<h5 class="m-0 text-primary p-2">근태 수정하기</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -385,11 +310,11 @@
 							<div class="col-sm-12">
 							날짜
 									<div class="form-group">
-										<div class="input-group date" id="Date1"
+										<div class="input-group date" id="Date"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#Date1" >
-											<div class="input-group-append" data-target="#Date1"
+												data-target="#Date" value="10/15/2020">
+											<div class="input-group-append" data-target="#Date"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
 													<i class="fa fa-calendar"></i>
@@ -403,75 +328,62 @@
 						<div class="form-group row">
 							<div class="col-sm-12">
 							이름
-								<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요.">
+								<input type="text" class="form-control" name="name" placeholder="김민희">
 							</div>
 						</div>
-						<!-- 부서  -->
+						
+						<!-- 사번 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							부서
-			                    <select name="category1" class="form-control">
-								    <option value="경영팀">경영팀</option>
-								    <option value="회계팀">회계팀</option>
-								    <option value="개발팀">개발팀</option>
+							사번
+								<input type="text" class="form-control" name="number" placeholder="20-7784">
+							</div>
+						</div>
+						
+						<!-- 출근시간 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+							<div>출퇴근시간</div>
+								<form name="해당 폼의 이름" action="값을 보낼 주소" method="post" style="padding-left:15px;">
+        							<input type='time' name='fromSul' value='08:52'/> ~
+        							<input type='time' name='toSul' value='12:10'/>
+   								</form>
+							</div>
+						</div>
+			
+						<!-- 지각여부 -->
+						<div class="form-group row">
+							<div class="col-sm-12">
+								근태
+			                    <select name="category" class="form-control">
+								    <option value="직급 변경">조퇴</option>
+								    <option value="부서 이동">지각</option>
+								    <option value="직급 변경">휴가</option>
+								    <option value="부서 이동">정상출근</option>
 								</select>
 							</div>
 						</div>
 						
-						<!-- 직급  -->
+						<!-- 비고 -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							평가
-			                    <select name="category2" class="form-control">
-								    <option value="1">사원</option>
-								    <option value="2">주임</option>
-								    <option value="3">대리</option>
-								   	<option value="4">과장</option>
-								    <option value="5">차장</option>
-								    <option value="6">부장</option>
-								</select>
+							비고
+								<textarea class="form-control" rows="3" name="cusContent" placeholder="개인사정"></textarea>
 							</div>
 						</div>
-						
-						<!--직원코드 -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							직원코드
-								<input type="text" class="form-control" name="content" placeholder="직원코드를 입력하세요.">
-							</div>
-						</div>
-						
-						<!-- 평가  -->
-						<div class="form-group row">
-							<div class="col-sm-12">
-							평가
-			                    <select name="category2" class="form-control">
-								    <option value="1">A+</option>
-								    <option value="2">A0</option>
-								    <option value="3">B+</option>
-								   	<option value="4">B0</option>
-								    <option value="5">C+</option>
-								    <option value="6">C0</option>
-								    <option value="7">D+</option>
-								    <option value="8">D0</option>
-								</select>
-							</div>
-						</div>
-						
 					</div>
 					<!-- modal-footer -->
 					<div class="modal-footer justify-content-between">
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  id="btnClickk" >확인</button>
+							<button type="submit" class="btn btn-primary" id="btnClick1">수정완료</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
 
 
     <!-- Popper.JS -->
@@ -489,15 +401,11 @@
 			$('#fromDate').datetimepicker({
 				format: 'L'	
 			});
-
+			
 			$('#Date').datetimepicker({
 				format: 'L'	
 			});
-			
-			$('#Date1').datetimepicker({
-				format: 'L'	
-			});
-			
+
 			$('#toDate').datetimepicker({
 				format: 'L', 
 				useCurrent: false
@@ -511,12 +419,12 @@
 				$('#fromDate').datetimepicker('maxDate', e.date); 
 			});
 			
-			$("#btnClickk").click(function(e){
-				e.preventDefault();
-				$('#WriteModal').modal("hide");
-				location.href='${root}/assess/assessMain_add';
+			$("#btnClick1").click(function(){
+				$('#updateModal').modal("hide");
+				alert("수정완료되었습니다.");
+				location.href="${root}/commute/commuteMain_update";
 			})
-
+		
 		});
 	</script>
 </body>
