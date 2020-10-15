@@ -29,6 +29,11 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 	
+	
+	<script type="text/javascript">
+
+		
+</script>
 
 </head>
 
@@ -107,7 +112,7 @@
 										<option value="3">대리</option>
 										<option value="4">과장</option>
 										<option value="5">차장</option>
-										<option value="6">팀장</option>
+										<option value="6">부장</option>
 									</select>
 								</div>
 								&nbsp;
@@ -144,8 +149,8 @@
 								&nbsp;
 								<div class="form-group" style="padding-left:50px; padding-right:50px;">
 									<input class="form-control mr-sm-2" type="search" placeholder="사원명" aria-label="Search">
-									<button class="btn btn-outline-secondary my-2 my-sm-0"
-										type="submit">검색</button>
+									<input class="btn btn-outline-secondary my-2 my-sm-0"  style=" width:50px;"
+										id="search1" value="검색"/>
 								</div>
 								
 								<div class="form-group" style="float:right; padding-left:150px;">
@@ -171,6 +176,15 @@
 						<tbody>
 								<tr data-toggle="modal" data-target="#click">
 								<!-- <th scope="row"></th> -->
+								<td>2020-10-16</td>
+								<td>개발팀</td>
+								<td>김민희</td>
+								<td>사원</td>
+								<td>20-7784</td>
+								<td>C0</td>
+								</tr>
+								
+								<tr>
 								<td>2020-10-15</td>
 								<td>개발팀</td>
 								<td>김민희</td>
@@ -276,7 +290,7 @@
 										<div class="input-group date" id="Date"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#Date" >
+												data-target="#Date" value="09/15/2020">
 											<div class="input-group-append" data-target="#Date"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -388,7 +402,7 @@
 										<div class="input-group date" id="Date1"
 											data-target-input="nearest">
 											<input type="text" class="form-control datetimepicker-input"
-												data-target="#Date1" >
+												data-target="#Date1" value="09/15/2020">
 											<div class="input-group-append" data-target="#Date1"
 												data-toggle="datetimepicker">
 												<div class="input-group-text">
@@ -421,7 +435,7 @@
 						<!-- 직급  -->
 						<div class="form-group row">
 							<div class="col-sm-12">
-							평가
+							직급
 			                    <select name="category2" class="form-control">
 								    <option value="1">사원</option>
 								    <option value="2">주임</option>
@@ -464,7 +478,7 @@
 						<button type="reset" class="btn btn-warning">초기화</button>
 						<div>
 							<button type="button" class="btn btn-dark" data-dismiss="modal">취소</button>
-							<button type="submit" class="btn btn-primary"  id="btnClickk" >확인</button>
+							<button type="submit" class="btn btn-primary"  id="btnClick1" >확인</button>
 						</div>
 					</div>
 				</form>
@@ -511,12 +525,11 @@
 				$('#fromDate').datetimepicker('maxDate', e.date); 
 			});
 			
-			$("#btnClickk").click(function(e){
-				e.preventDefault();
-				$('#WriteModal').modal("hide");
-				location.href='${root}/assess/assessMain_add';
-			})
-
+			$("#search1").click(function(e){
+				e.preventDefault;
+				location.href='${root}/assess/assessMain_search';
+			});
+			
 		});
 	</script>
 </body>
